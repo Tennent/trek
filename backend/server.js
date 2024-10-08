@@ -39,6 +39,16 @@ app.post('/api/v1/registerUser', async (req, res) => {
     }
 })
 
+app.post("/api/v1/loginUser", async (req, res) => {
+    try {
+        const { user_name, password } = req.body;
+        const token = await UserModel.login(user_name, password)
+        return res.status(200).json(token)
+    } catch (error) {
+        return res.status(400).json({ error: error.message })
+    }
+})
+
 async function main() {
     await mongoose.connect(dbUrl)
     app.listen(3000, () => {
