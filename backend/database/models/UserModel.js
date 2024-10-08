@@ -7,7 +7,11 @@ const userSchema = new Schema({
     hashed_password: { type: String, required: true },
     email: { type: String, required: true, unique: true},
     phone: { type: String, required: false},
-    is_admin: { type: Boolean, default: false }
+    is_admin: { type: Boolean, default: false },
+    cars: [{
+        type: Schema.Types.ObjectId,
+        ref: "CarModel"
+    }]
 });
 
 userSchema.statics.signup = async function (user_name, password, email) {
