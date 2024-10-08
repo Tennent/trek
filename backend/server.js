@@ -87,6 +87,29 @@ app.post("/api/v1/createCar", async (req, res) => {
     }
 })
 
+app.delete("/api/v1/car/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params;
+
+        const car = await CarModel.findById(_id);
+        if (!car) {
+            return res.status(404).json({ message: "Car not found" });
+        }
+
+        const user = await UserModel.findById(car.owner);
+        if (user) {
+            user.cars = user.cars.filter(carId => carId.toString() !== _id);
+            await user.save();
+        }
+
+        await CarModel.findByIdAndDelete(_id);
+
+        return res.status(200).json({ message: "Car deleted successfully" });
+    } catch (error) {
+        return res.status(500).json({ message: "An error occurred", error: error.message });
+    }
+});
+
 async function main() {
     await mongoose.connect(dbUrl)
     app.listen(3000, () => {
