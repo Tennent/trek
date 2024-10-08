@@ -49,11 +49,24 @@ app.post("/api/v1/loginUser", async (req, res) => {
     }
 })
 
+app.get("/api/v1/user/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params
+        const user = await UserModel.findById(_id)
+
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        return res.status(200).json(user);
+    } catch (error) {
+        return res.status(500).json({ message: "Some error occured" })
+    }
+})
+
 async function main() {
     await mongoose.connect(dbUrl)
     app.listen(3000, () => {
         console.log("Server is running at port: 3000");
-        
     })
 }
 
