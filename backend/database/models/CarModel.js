@@ -8,9 +8,22 @@ const carSchema = new Schema({
     body_type: { type: String, required: true },
     maintenance_data: [{ 
         type: Schema.Types.ObjectId,
-        ref: "MaintenanceModel",
-        required: true 
-    }]
+        ref: "MaintenanceModel"
+    }],
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: "UserModel",
+        required: true
+    }
 });
+
+carSchema.statics.createCar = async function (year, make, model, fuel_type, body_type, owner) {
+    if (!year || !make || !model || !fuel_type || !body_type || !owner) {
+        throw Error("All fields must be filled");
+    };
+
+    const car = this.create({ year, make, model, fuel_type, body_type, owner });
+    return car;
+}
 
 export default mongoose.model('car', carSchema, 'cars');
