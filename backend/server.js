@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import path from "path";
 
 import UserModel from "./database/models/UserModel.js";
+import CarModel from "./database/models/CarModel.js";
 
 // Construct directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -60,6 +61,29 @@ app.get("/api/v1/user/:_id", async (req, res) => {
         return res.status(200).json(user);
     } catch (error) {
         return res.status(500).json({ message: "Some error occured" })
+    }
+})
+
+app.post("/api/v1/createCar", async (req, res) => {
+    try {
+        const { userId, year, make, model, fuel_type, body_type } = req.body;
+        if (!mongoose.Types.ObjectId.isValid(userId)) {
+            return res.status(400).json({ message: "Invalid user ID format" });
+        }
+
+        const user = await UserModel.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        const newCar = await CarModel.createCar(year, make, model, fuel_type, body_type, userId);
+
+        user.cars.push(newCar._id);
+        await user.save();
+
+        return res.status(201).json({ message: 'Car added successfully', car: newCar });
+    } catch (error) {
+        return res.status(400).json({ error: error.message })
     }
 })
 
