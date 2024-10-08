@@ -1,10 +1,18 @@
 import express from "express";
+import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import path from "path";
 
 // Construct directory path
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Config files
+dotenv.config({
+    path: path.join(__dirname, './config/.env'),
+    override: true,
+});
+const dbUrl = process.env.DB_URL;
 
 const app = express();
 
