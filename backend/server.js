@@ -87,6 +87,35 @@ app.post("/api/v1/createCar", async (req, res) => {
     }
 })
 
+app.patch("/api/v1/updateCar/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params;
+
+        const car = await CarModel.findById(_id);
+        if (!car) {
+            return res.status(404).json({ message: "Car not found" });
+        }
+
+        const fieldsToUpdate = ['year', 'make', 'model', 'fuel_type', 'body_type'];
+        const invalidFields = Object.keys(req.body).filter(field => !fieldsToUpdate.includes(field));
+
+        if (invalidFields.length > 0) {
+            return res.status(400).json({ message: `Field(s) ${invalidFields.join(', ')} cannot be edited.` })
+        }
+
+        fieldsToUpdate.forEach(field => {
+            if (req.body[field] !== undefined) {
+                car[field] = req.body[field];
+            }
+        });
+
+        await car.save();
+        return res.status(200).json({ message: 'Car updated successfully' });
+    } catch (error) {
+        return res.status(400).json({ error: error.message })
+    }
+})
+
 app.delete("/api/v1/car/:_id", async (req, res) => {
     try {
         const { _id } = req.params;
