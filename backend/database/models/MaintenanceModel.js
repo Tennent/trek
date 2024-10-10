@@ -17,12 +17,12 @@ const maintenanceSchema = new Schema({
     }
 });
 
-maintenanceSchema.statics.createMaintenanceEntry = async function (date, titel, description, cost, items, car) {
-    if (!date || !titel || !cost || !car) {
+maintenanceSchema.statics.createMaintenanceEntry = async function (date, title, description, cost, items, car) {
+    if (!date || !title || !cost || !car) {
         throw Error("All mandatory fields must be filled");
     };
 
-    const maintenance = this.create({ date, titel, description, cost, items, car });
+    const maintenance = this.create({ date, title, description, cost, items, car });
     return maintenance;
 }
 
