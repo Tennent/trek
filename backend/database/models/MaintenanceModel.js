@@ -1,15 +1,17 @@
 import mongoose, { Schema } from "mongoose";
 
+const itemSchema = new Schema({
+    name: { type: String, required: true },
+    quantity: { type: Number, required: true },
+    unit_price: { type: Number, required: true }
+});
+
 const maintenanceSchema = new Schema({
     date: { type: Date, required: true },
     title: { type: String, required: true },
     description: { type: String },
     cost: { type: Number, required: true },
-    items: [{
-        type: Schema.Types.ObjectId,
-        ref: "ItemModel",
-        required: true
-    }],
+    items: [itemSchema],
     car: {
         type: Schema.Types.ObjectId,
         ref: "CarModel",
