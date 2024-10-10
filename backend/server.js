@@ -6,6 +6,7 @@ import path from "path";
 
 import UserModel from "./database/models/UserModel.js";
 import CarModel from "./database/models/CarModel.js";
+import MaintenanceModel from "./database/models/MaintenanceModel.js";
 
 // Construct directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -138,6 +139,29 @@ app.delete("/api/v1/car/:_id", async (req, res) => {
         return res.status(500).json({ message: "An error occurred", error: error.message });
     }
 });
+
+app.post("/api/v1/createMaintenanceEntry", async (req, res) => {
+    try {
+        const { date, title, description, cost, items, carId } = req.body;
+        if (!mongoose.Types.ObjectId.isValid(carId)) {
+            return res.status(400).json({ message: "Invalid car ID format" });
+        }
+
+        const car = await CarModel.findById(carId);
+        if (!car) {
+            return res.status(404).json({ message: "Car not found" });
+        }
+
+        const newMaintenanceEntry = await MaintenanceModel.createMaintenanceEntry(date, title, description, cost, items, carId);
+
+        car.maintenance_data.push(newMaintenanceEntry._id);
+        await car.save();
+
+        return res.status(201).json({ message: 'Maintenance entry added successfully', entry: newMaintenanceEntry });
+    } catch (error) {
+        return res.status(400).json({ error: error.message })
+    }
+})
 
 async function main() {
     await mongoose.connect(dbUrl)
