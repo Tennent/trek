@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import path from "path";
 
 import UserModel from "./database/models/UserModel.js";
+import CarModel from "./database/models/CarModel.js";
 
 // Construct directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -62,6 +63,81 @@ app.get("/api/v1/user/:_id", async (req, res) => {
         return res.status(500).json({ message: "Some error occured" })
     }
 })
+
+app.post("/api/v1/createCar", async (req, res) => {
+    try {
+        const { userId, year, make, model, fuel_type, body_type } = req.body;
+        if (!mongoose.Types.ObjectId.isValid(userId)) {
+            return res.status(400).json({ message: "Invalid user ID format" });
+        }
+
+        const user = await UserModel.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        const newCar = await CarModel.createCar(year, make, model, fuel_type, body_type, userId);
+
+        user.cars.push(newCar._id);
+        await user.save();
+
+        return res.status(201).json({ message: 'Car added successfully', car: newCar });
+    } catch (error) {
+        return res.status(400).json({ error: error.message })
+    }
+})
+
+app.patch("/api/v1/updateCar/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params;
+
+        const car = await CarModel.findById(_id);
+        if (!car) {
+            return res.status(404).json({ message: "Car not found" });
+        }
+
+        const fieldsToUpdate = ['year', 'make', 'model', 'fuel_type', 'body_type'];
+        const invalidFields = Object.keys(req.body).filter(field => !fieldsToUpdate.includes(field));
+
+        if (invalidFields.length > 0) {
+            return res.status(400).json({ message: `Field(s) ${invalidFields.join(', ')} cannot be edited.` })
+        }
+
+        fieldsToUpdate.forEach(field => {
+            if (req.body[field] !== undefined) {
+                car[field] = req.body[field];
+            }
+        });
+
+        await car.save();
+        return res.status(200).json({ message: 'Car updated successfully' });
+    } catch (error) {
+        return res.status(400).json({ error: error.message })
+    }
+})
+
+app.delete("/api/v1/car/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params;
+
+        const car = await CarModel.findById(_id);
+        if (!car) {
+            return res.status(404).json({ message: "Car not found" });
+        }
+
+        const user = await UserModel.findById(car.owner);
+        if (user) {
+            user.cars = user.cars.filter(carId => carId.toString() !== _id);
+            await user.save();
+        }
+
+        await CarModel.findByIdAndDelete(_id);
+
+        return res.status(200).json({ message: "Car deleted successfully" });
+    } catch (error) {
+        return res.status(500).json({ message: "An error occurred", error: error.message });
+    }
+});
 
 async function main() {
     await mongoose.connect(dbUrl)
