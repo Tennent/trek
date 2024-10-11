@@ -6,6 +6,7 @@ import path from "path";
 
 import UserModel from "./database/models/UserModel.js";
 import CarModel from "./database/models/CarModel.js";
+import MaintenanceModel from "./database/models/MaintenanceModel.js";
 
 // Construct directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -134,6 +135,96 @@ app.delete("/api/v1/car/:_id", async (req, res) => {
         await CarModel.findByIdAndDelete(_id);
 
         return res.status(200).json({ message: "Car deleted successfully" });
+    } catch (error) {
+        return res.status(500).json({ message: "An error occurred", error: error.message });
+    }
+});
+
+app.post("/api/v1/createMaintenanceEntry", async (req, res) => {
+    try {
+        const { date, title, description, cost, items, carId } = req.body;
+        if (!mongoose.Types.ObjectId.isValid(carId)) {
+            return res.status(400).json({ message: "Invalid car ID format" });
+        }
+
+        const car = await CarModel.findById(carId);
+        if (!car) {
+            return res.status(404).json({ message: "Car not found" });
+        }
+
+        const newMaintenanceEntry = await MaintenanceModel.createMaintenanceEntry(date, title, description, cost, items, carId);
+
+        car.maintenance_data.push(newMaintenanceEntry._id);
+        await car.save();
+
+        return res.status(201).json({ message: 'Maintenance entry added successfully', entry: newMaintenanceEntry });
+    } catch (error) {
+        return res.status(400).json({ error: error.message })
+    }
+})
+
+app.patch("/api/v1/updateMaintenanceEntry/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params;
+        const maintenanceEntry = await MaintenanceModel.findById(_id);
+        if (!maintenanceEntry) {
+            return res.status(404).json({ message: "Maintenance entry not found" });
+        }
+
+        const fieldsToUpdate = ["date", "title", "description", "cost", "items"];
+        const invalidFields = Object.keys(req.body).filter(field => !fieldsToUpdate.includes(field));
+        if (invalidFields.length > 0) {
+            return res.status(400).json({ message: `Field(s) ${invalidFields.join(', ')} cannot be edited.` });
+        }
+
+        fieldsToUpdate.forEach(field => {
+            if (req.body[field] !== undefined && field !== "items") {
+                maintenanceEntry[field] = req.body[field];
+            }
+        });
+
+        if (req.body.items) {
+            for (const item of req.body.items) {
+                const { _id: itemId, ...fieldsToUpdate } = item;
+                const itemToUpdate = maintenanceEntry.items.id(itemId);
+                
+                if (itemToUpdate) {
+                    Object.keys(fieldsToUpdate).forEach(field => {
+                        if (fieldsToUpdate[field] !== undefined) {
+                            itemToUpdate[field] = fieldsToUpdate[field];
+                        }
+                    });
+                } else {
+                    return res.status(400).json({ message: `Item with id ${itemId} not found` });
+                }
+            }
+        }
+
+        await maintenanceEntry.save();
+        return res.status(200).json({ message: 'Maintenance entry updated successfully' });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+});
+
+app.delete("/api/v1/maintenanceEntry/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params;
+
+        const maintenanceEntry = await MaintenanceModel.findById(_id);
+        if (!maintenanceEntry) {
+            return res.status(404).json({ message: "Maintenance entry not found" });
+        }
+
+        const car = await CarModel.findById(maintenanceEntry.car);
+        if (car) {
+            car.maintenance_data = car.maintenance_data.filter(entryId => entryId.toString() !== _id);
+            await car.save();
+        }
+
+        await MaintenanceModel.findByIdAndDelete(_id);
+
+        return res.status(200).json({ message: "Maintenance entry deleted successfully" });
     } catch (error) {
         return res.status(500).json({ message: "An error occurred", error: error.message });
     }
