@@ -163,6 +163,50 @@ app.post("/api/v1/createMaintenanceEntry", async (req, res) => {
     }
 })
 
+app.patch("/api/v1/updateMaintenanceEntry/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params;
+        const maintenanceEntry = await MaintenanceModel.findById(_id);
+        if (!maintenanceEntry) {
+            return res.status(404).json({ message: "Maintenance entry not found" });
+        }
+
+        const fieldsToUpdate = ["date", "title", "description", "cost", "items"];
+        const invalidFields = Object.keys(req.body).filter(field => !fieldsToUpdate.includes(field));
+        if (invalidFields.length > 0) {
+            return res.status(400).json({ message: `Field(s) ${invalidFields.join(', ')} cannot be edited.` });
+        }
+
+        fieldsToUpdate.forEach(field => {
+            if (req.body[field] !== undefined && field !== "items") {
+                maintenanceEntry[field] = req.body[field];
+            }
+        });
+
+        if (req.body.items) {
+            for (const item of req.body.items) {
+                const { _id: itemId, ...fieldsToUpdate } = item;
+                const itemToUpdate = maintenanceEntry.items.id(itemId);
+                
+                if (itemToUpdate) {
+                    Object.keys(fieldsToUpdate).forEach(field => {
+                        if (fieldsToUpdate[field] !== undefined) {
+                            itemToUpdate[field] = fieldsToUpdate[field];
+                        }
+                    });
+                } else {
+                    return res.status(400).json({ message: `Item with id ${itemId} not found` });
+                }
+            }
+        }
+
+        await maintenanceEntry.save();
+        return res.status(200).json({ message: 'Maintenance entry updated successfully' });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+});
+
 async function main() {
     await mongoose.connect(dbUrl)
     app.listen(3000, () => {
