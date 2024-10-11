@@ -207,6 +207,29 @@ app.patch("/api/v1/updateMaintenanceEntry/:_id", async (req, res) => {
     }
 });
 
+app.delete("/api/v1/maintenanceEntry/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params;
+
+        const maintenanceEntry = await MaintenanceModel.findById(_id);
+        if (!maintenanceEntry) {
+            return res.status(404).json({ message: "Maintenance entry not found" });
+        }
+
+        const car = await CarModel.findById(maintenanceEntry.car);
+        if (car) {
+            car.maintenance_data = car.maintenance_data.filter(entryId => entryId.toString() !== _id);
+            await car.save();
+        }
+
+        await MaintenanceModel.findByIdAndDelete(_id);
+
+        return res.status(200).json({ message: "Maintenance entry deleted successfully" });
+    } catch (error) {
+        return res.status(500).json({ message: "An error occurred", error: error.message });
+    }
+});
+
 async function main() {
     await mongoose.connect(dbUrl)
     app.listen(3000, () => {
