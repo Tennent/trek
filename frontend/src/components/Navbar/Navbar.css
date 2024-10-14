@@ -17,3 +17,39 @@
     font-weight: 800;
     font-style: normal;
 }
+
+/* Tablet styles */
+@media (min-width: 721px) and (max-width: 1320px) {
+    .navbar {
+        height: 30%;
+        background-size: 30vw; /* Dynamically sized */
+        background-position: center;
+    }
+}
+
+/* Mobile styles */
+@media (min-width: 431px) and (max-width: 720px) {
+    .navbar {
+        height: 25%;
+        background-size: 45vw; /* Slightly larger for mobile */
+        background-position: center;
+    }
+}
+
+/* Small-screen styles */
+@media (min-width: 321px) and (max-width: 430px) {
+    .navbar {
+        height: 20%;
+        background-size: 60vw; /* Larger background image for small screens */
+        background-position: center;
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 320px) {
+    .navbar {
+        height: 20%;
+        background-size: 80vw; /* Larger background image for small screens */
+        background-position: center;
+    }
+}
