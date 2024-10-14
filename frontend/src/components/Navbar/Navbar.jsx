@@ -9,10 +9,10 @@ export default function Navbar() {
                 <Link to={'/'}></Link>
             </div>
             <div className='navbar-links'>
-                <Link to='/'>Home</Link>
-                <Link to='/'>About</Link>
-                <Link to='/'>Contact</Link>
-                <Link to='/'>Sign Up</Link>
+                <Link to='/' className="navbar-button">Home</Link>
+                <Link to='/' className="navbar-button">About</Link>
+                <Link to='/' className="navbar-button">Contact</Link>
+                <Link to='/' className="sign-up-button">Sign Up</Link>
             </div>
         </nav>
     )
