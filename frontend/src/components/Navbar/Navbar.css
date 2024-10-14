@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.navbar {
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    left: calc(50% - 100%/2);
+    top: 0px;
+
+    background-color: #C5DBCE;
+    background-image: url(/car-background.jpg);
+    background-size: 36.4%;
+    background-position: center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
