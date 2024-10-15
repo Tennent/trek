@@ -44,7 +44,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     transition: transform 500ms ease;
+}
+
+.manage-card:hover,
+.track-card:hover,
+.save-card:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
 }
 
 .manage-card img,
