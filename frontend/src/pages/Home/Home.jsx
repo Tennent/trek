@@ -4,7 +4,9 @@ export default function Home() {
 
     return (
         <div className="home-container">
-            <h1 className="motto">Follow your car's journey</h1>
+            <h1 className="motto">
+                Follow your car's <span className="highlight">journey</span>
+            </h1>
 
             <div className="card-container">
                 <div className="manage-card">
