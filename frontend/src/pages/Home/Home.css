@@ -26,6 +26,10 @@
     text-transform: uppercase;
 }
 
+.highlight {
+    color: #031D40;
+}
+
 .card-container {
     display: flex;
     justify-content: center;
@@ -49,10 +53,6 @@
     width: 20vw;
     height: auto;
     box-shadow: 0 4px 8px #031D40;
-}
-
-.highlight {
-    color: #031D40;
 }
 
 /* Tablet styles */
