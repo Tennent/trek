@@ -26,6 +26,31 @@
     text-transform: uppercase;
 }
 
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5vw;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.manage-card,
+.track-card,
+.save-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 500ms ease;
+}
+
+.manage-card img,
+.track-card img,
+.save-card img {
+    width: 20vw;
+    height: auto;
+    box-shadow: 0 4px 8px #031D40;
+}
+
 .highlight {
     color: #031D40;
 }
