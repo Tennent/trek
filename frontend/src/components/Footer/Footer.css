@@ -11,3 +11,20 @@
     height: 15vh;
     font-family: "Saira Condensed", sans-serif;
 }
+
+.call-to-action {
+    font-size: 2vw;
+    font-weight: 800;
+    font-style: normal;
+    color: #031D40;
+    text-transform: uppercase;
+
+    padding-left: 5vw;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.call-to-action:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+}
