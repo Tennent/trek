@@ -40,6 +40,29 @@
     gap: 2vw;
 }
 
+.navbar-button {
+    font-size: 1.3vw;
+    font-weight: 600;
+    font-style: normal;
+
+    color: #031D40;
+    text-decoration: none;
+    cursor: pointer;   
+}
+
+.signup-button {
+    font-size: 1.3vw;
+    font-weight: 600;
+    font-style: normal;
+
+    padding: 0.5vw 1.5vw;
+    background-color: #066A93;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Tablet styles */
 @media (min-width: 721px) and (max-width: 1320px) {
     .navbar {
@@ -50,6 +73,14 @@
 
     .navbar-logo img {
         top: -7vh;
+    }
+
+    .navbar-button {
+        font-size: 1.6vw;
+    }
+    
+    .signup-button {
+        font-size: 1.6vw;
     }
 }
 
@@ -64,6 +95,14 @@
     .navbar-logo img {
         top: -5vh;
     }
+
+    .navbar-button {
+        font-size: 1.9vw;
+    }
+    
+    .signup-button {
+        font-size: 1.9vw;
+    }
 }
 
 /* Small-screen styles */
@@ -77,6 +116,14 @@
     .navbar-logo img {
         top: -3vh;
     }
+
+    .navbar-button {
+        font-size: 2.2vw;
+    }
+    
+    .signup-button {
+        font-size: 2.2vw;
+    }
 }
 
 /* Extra small screen styles */
@@ -89,5 +136,13 @@
 
     .navbar-logo img {
         top: -2vh;
+    }
+
+    .navbar-button {
+        font-size: 2.5vw;
+    }
+    
+    .signup-button {
+        font-size: 2.5vw;
     }
 }
