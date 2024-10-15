@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.navbar {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    left: calc(50% - 100%/2);
+    top: 0px;
+
+    background-color: #C5DBCE;
+    background-image: url(/car-background.jpg);
+    background-size: 36.4%;
+    background-position: center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.navbar-logo img {
+    position: absolute;
+    width: 25vw;
+    height: auto;
+    left: 5vw;
+    top: -15vh;
+
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+.navbar-links {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    
+    width: auto;
+    height: auto;
+    right: 10vw;
+    top: 2vh;
+    gap: 2vw;
+}
+
+.navbar-button {
+    font-size: 1.3vw;
+    font-weight: 600;
+    font-style: normal;
+
+    color: #031D40;
+    text-decoration: none;
+    cursor: pointer;   
+}
+
+.signup-button {
+    font-size: 1.3vw;
+    font-weight: 600;
+    font-style: normal;
+
+    padding: 0.5vw 1.5vw;
+    background-color: #066A93;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Tablet styles */
+@media (min-width: 721px) and (max-width: 1320px) {
+    .navbar {
+        height: 30%;
+        background-size: 30vw;
+        background-position: center;
+    }
+
+    .navbar-logo img {
+        top: -7vh;
+    }
+
+    .navbar-button {
+        font-size: 1.6vw;
+    }
+    
+    .signup-button {
+        font-size: 1.6vw;
+    }
+}
+
+/* Mobile styles */
+@media (min-width: 431px) and (max-width: 720px) {
+    .navbar {
+        height: 25%;
+        background-size: 45vw;
+        background-position: center;
+    }
+
+    .navbar-logo img {
+        top: -5vh;
+    }
+
+    .navbar-button {
+        font-size: 1.9vw;
+    }
+    
+    .signup-button {
+        font-size: 1.9vw;
+    }
+}
+
+/* Small-screen styles */
+@media (min-width: 321px) and (max-width: 430px) {
+    .navbar {
+        height: 20%;
+        background-size: 60vw;
+        background-position: center;
+    }
+
+    .navbar-logo img {
+        top: -3vh;
+    }
+
+    .navbar-button {
+        font-size: 2.2vw;
+    }
+    
+    .signup-button {
+        font-size: 2.2vw;
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 320px) {
+    .navbar {
+        height: 20%;
+        background-size: 80vw;
+        background-position: center;
+    }
+
+    .navbar-logo img {
+        top: -2vh;
+    }
+
+    .navbar-button {
+        font-size: 2.5vw;
+    }
+    
+    .signup-button {
+        font-size: 2.5vw;
+    }
+}
