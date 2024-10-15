@@ -60,12 +60,34 @@
     .home-container {
         margin-top: 30vh;
     }
+
+    .manage-card img,
+    .track-card img,
+    .save-card img {
+        width: 25vw;
+    }
 }
 
 /* Mobile styles */
 @media (min-width: 431px) and (max-width: 720px) {
     .home-container {
         margin-top: 25vh;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .save-card {
+        grid-column: span 2;
+        justify-self: center;
+    }
+
+    .manage-card img,
+    .track-card img,
+    .save-card img {
+        width: 40vw;
     }
 }
 
@@ -74,11 +96,33 @@
     .home-container {
         margin-top: 20vh;
     }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .manage-card img,
+    .track-card img,
+    .save-card img {
+        width: 70vw;
+    }
 }
 
 /* Extra small screen styles */
 @media (max-width: 320px) {
     .home-container {
         margin-top: 20vh;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .manage-card img,
+    .track-card img,
+    .save-card img {
+        width: 70vw;
     }
 }
