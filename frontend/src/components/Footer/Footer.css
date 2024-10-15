@@ -28,3 +28,21 @@
     transform: scale(1.05);
     transform-origin: 500ms;
 }
+
+.social-links {
+    display: flex;
+    gap: 1vw;
+    padding-right: 5vw;
+}
+
+.social-links img {
+    width: 2vw;
+    height: auto;
+    cursor: pointer;
+    transition: transform 500ms ease, filter 500ms ease;;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(30%) sepia(75%) saturate(500%) hue-rotate(180deg);
+}
