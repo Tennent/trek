@@ -28,6 +28,18 @@
     max-width: 100%;
 }
 
+.navbar-links {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    
+    width: auto;
+    height: auto;
+    right: 10vw;
+    top: 2vh;
+    gap: 2vw;
+}
+
 /* Tablet styles */
 @media (min-width: 721px) and (max-width: 1320px) {
     .navbar {
