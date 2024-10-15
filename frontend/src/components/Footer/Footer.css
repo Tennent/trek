@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: 5vh;
+    background-color: #C5DBCE;
+    height: 15vh;
+    font-family: "Saira Condensed", sans-serif;
+}
