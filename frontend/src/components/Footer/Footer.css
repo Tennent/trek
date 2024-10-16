@@ -39,7 +39,7 @@
     width: 2vw;
     height: auto;
     cursor: pointer;
-    transition: transform 500ms ease, filter 500ms ease;;
+    transition: transform 500ms ease, filter 500ms ease;
 }
 
 .social-links img:hover {
@@ -56,6 +56,7 @@
 }
 
 .legal-links p {
+    font-size: 2vh;
     margin: 0;
     cursor: pointer;
     transition: transform 500ms ease;
@@ -63,4 +64,64 @@
 
 .legal-links p:hover {
     color: #066A93;
+}
+
+/* Tablet styles */
+@media (min-width: 721px) and (max-width: 1320px) {
+    .call-to-action {
+        font-size: 3vw;
+    }
+
+    .social-links img {
+        width: 3vw;
+    }
+
+    .legal-links p {
+        font-size: 2vh;
+    }
+}
+
+/* Mobile styles */
+@media (min-width: 431px) and (max-width: 720px) {
+    .call-to-action {
+        font-size: 3vw;
+    }
+
+    .social-links img {
+        width: 3vw;
+    }
+
+    .legal-links p {
+        font-size: 2vh;
+    }
+}
+
+/* Small-screen styles */
+@media (min-width: 321px) and (max-width: 430px) {
+    .call-to-action {
+        font-size: 4vw;
+    }
+
+    .social-links img {
+        width: 4vw;
+    }
+
+    .legal-links p {
+        font-size: 1.5vh;
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 320px) {
+    .call-to-action {
+        font-size: 4vw;
+    }
+
+    .social-links img {
+        width: 4vw;
+    }
+
+    .legal-links p {
+        font-size: 1.5vh;
+    }
 }
