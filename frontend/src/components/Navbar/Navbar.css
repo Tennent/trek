@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-.navbar {
+.navbar-container {
     display: flex;
     position: absolute;
     width: 100vw;
@@ -19,10 +19,10 @@
 
 .navbar-logo img {
     position: absolute;
-    width: 25vw;
+    width: 10vw;
     height: auto;
-    left: 5vw;
-    top: -15vh;
+    left: 9vw;
+    top: 2vh;
 
     background-repeat: no-repeat;
     max-width: 100%;
@@ -32,7 +32,7 @@
     display: flex;
     position: absolute;
     align-items: center;
-    
+
     width: auto;
     height: auto;
     right: 10vw;
@@ -47,7 +47,7 @@
 
     color: #031D40;
     text-decoration: none;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
 .signup-button {
@@ -61,24 +61,32 @@
     color: #FFFFFF;
     text-decoration: none;
     cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.signup-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #08A771;
+    color: #FFFFFF;
 }
 
 /* Tablet styles */
 @media (min-width: 721px) and (max-width: 1320px) {
-    .navbar {
+    .navbar-container {
         height: 30vh;
         background-size: 30vw;
         background-position: center;
     }
 
     .navbar-logo img {
-        top: -7vh;
+        top: 2vh;
     }
 
     .navbar-button {
         font-size: 1.6vw;
     }
-    
+
     .signup-button {
         font-size: 1.6vw;
     }
@@ -86,20 +94,21 @@
 
 /* Mobile styles */
 @media (min-width: 431px) and (max-width: 720px) {
-    .navbar {
+    .navbar-container {
         height: 25vh;
         background-size: 45vw;
         background-position: center;
     }
 
     .navbar-logo img {
-        top: -5vh;
+        width: 12vw;
+        top: 2vh;
     }
 
     .navbar-button {
         font-size: 1.9vw;
     }
-    
+
     .signup-button {
         font-size: 1.9vw;
     }
@@ -107,20 +116,21 @@
 
 /* Small-screen styles */
 @media (min-width: 321px) and (max-width: 430px) {
-    .navbar {
+    .navbar-container {
         height: 20vh;
         background-size: 60vw;
         background-position: center;
     }
 
     .navbar-logo img {
-        top: -3vh;
+        width: 12vw;
+        top: 2vh;
     }
 
     .navbar-button {
         font-size: 2.2vw;
     }
-    
+
     .signup-button {
         font-size: 2.2vw;
     }
@@ -128,20 +138,21 @@
 
 /* Extra small screen styles */
 @media (max-width: 320px) {
-    .navbar {
+    .navbar-container {
         height: 20vh;
         background-size: 80vw;
         background-position: center;
     }
 
     .navbar-logo img {
-        top: -2vh;
+        width: 12vw;
+        top: 2vh;
     }
 
     .navbar-button {
         font-size: 2.5vw;
     }
-    
+
     .signup-button {
         font-size: 2.5vw;
     }

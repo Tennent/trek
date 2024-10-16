@@ -4,7 +4,7 @@ import './Navbar.css'
 
 export default function Navbar() {
     return (
-        <nav className='navbar'>
+        <nav className='navbar-container'>
             <div className='navbar-logo'>
                 <Link to={'/'}>
                     <img src="/trek-logo.png" alt="trek-logo" />
