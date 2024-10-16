@@ -32,7 +32,7 @@
     display: flex;
     position: absolute;
     align-items: center;
-    
+
     width: auto;
     height: auto;
     right: 10vw;
@@ -47,7 +47,7 @@
 
     color: #031D40;
     text-decoration: none;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
 .signup-button {
@@ -61,6 +61,14 @@
     color: #FFFFFF;
     text-decoration: none;
     cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.signup-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #08A771;
+    color: #FFFFFF;
 }
 
 /* Tablet styles */
@@ -78,7 +86,7 @@
     .navbar-button {
         font-size: 1.6vw;
     }
-    
+
     .signup-button {
         font-size: 1.6vw;
     }
@@ -99,7 +107,7 @@
     .navbar-button {
         font-size: 1.9vw;
     }
-    
+
     .signup-button {
         font-size: 1.9vw;
     }
@@ -120,7 +128,7 @@
     .navbar-button {
         font-size: 2.2vw;
     }
-    
+
     .signup-button {
         font-size: 2.2vw;
     }
@@ -141,7 +149,7 @@
     .navbar-button {
         font-size: 2.5vw;
     }
-    
+
     .signup-button {
         font-size: 2.5vw;
     }
