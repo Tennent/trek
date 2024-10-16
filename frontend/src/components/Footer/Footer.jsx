@@ -1,3 +1,5 @@
+import './Footer.css'
+
 export default function Footer() {
     return (
         <nav className='footer-container'>
