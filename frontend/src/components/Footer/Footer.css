@@ -6,9 +6,10 @@
     align-items: center;
     flex-wrap: wrap;
 
+    width: 100vw;
+    height: 15vh;
     padding-top: 5vh;
     background-color: #C5DBCE;
-    height: 15vh;
     font-family: "Saira Condensed", sans-serif;
 }
 
