@@ -1,3 +1,5 @@
+import './Contact.css'
+
 export default function Contact() {
     return (
         <div className='contact-container'>
@@ -5,17 +7,18 @@ export default function Contact() {
                 Contact us!
             </h1>
             <div className="location-container">
-                <h2 className="location-city">
-                    Budapest
-                </h2>
-                <pre className="location-address">
+                <p className="location-address">
+                    <strong>BUDAPEST</strong>
+                    <br />
                     trek. Kft,
+                    <br />
                     Váci Road 187,
+                    <br />
                     1138 Budapest, Hungary
-                </pre>
+                </p>
             </div>
             <div className="contact-list-container">
-                <ul className="contact-list-">
+                <ul className="contact-list">
                     <li className="list-item">
                         Email: trek@trek.com
                     </li>
