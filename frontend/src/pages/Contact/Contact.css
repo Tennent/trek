@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 22vw;
+
+    width: 100vw;
+    height: 35vh;
+    margin-top: 45vh;
+    overflow: auto;
+
+    background-color: #08A771;
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.contact-title {
+    font-size: 4vw;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.location-address {
+    font-size: 1.5vw;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contact-list {
+    font-size: 1.5vw;
+    font-weight: 400;
+    font-style: normal;
+}
