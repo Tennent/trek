@@ -27,3 +27,12 @@
 .about-title .highlight {
     color: #031D40
 }
+
+.about-content .about-text {
+    font-size: 2vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+    
+    text-align: center;
+}
