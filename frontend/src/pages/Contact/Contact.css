@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 22vw;
+
+    width: 100vw;
+    min-height: 40vh;
+    margin-top: 45vh;
+    overflow: auto;
+
+    background-color: #08A771;
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.contact-title {
+    font-size: 4vw;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.location-address {
+    font-size: 1.5vw;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.contact-list {
+    font-size: 1.5vw;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Tablet styles */
+@media (min-width: 721px) and (max-width: 1320px) {
+    .contact-container {
+        height: 50vh;
+        margin-top: 30vh;
+    }
+}
+
+/* Mobile styles */
+@media (min-width: 431px) and (max-width: 720px) {
+    .contact-container {
+        height: 55vh;
+        margin-top: 25vh;
+        gap: 18vw;
+    }
+
+    .contact-title {
+        font-size: 5vw;
+    }
+    
+    .location-address,
+    .contact-list {
+        font-size: 2vw;
+    }
+}
+
+/* Small-screen styles */
+@media (min-width: 321px) and (max-width: 430px) {
+    .contact-container {
+        flex-direction: column;
+        height: 60vh;
+        margin-top: 20vh;
+        gap: 5vw;
+    }
+
+    .contact-title {
+        font-size: 6vw;
+    }
+    
+    .location-address,
+    .contact-list {
+        font-size: 3vw;
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 320px) {
+    .contact-container {
+        flex-direction: column;
+        height: 60vh;
+        margin-top: 20vh;
+        gap: 5vw;
+    }
+
+    .contact-title {
+        font-size: 8vw;
+    }
+    
+    .location-address,
+    .contact-list {
+        font-size: 4vw;
+    }
+}

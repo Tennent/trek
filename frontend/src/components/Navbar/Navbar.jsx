@@ -13,7 +13,7 @@ export default function Navbar() {
             <div className='navbar-links'>
                 <Link to='/' className="navbar-button">Home</Link>
                 <Link to='about' className="navbar-button">About</Link>
-                <Link to='/' className="navbar-button">Contact</Link>
+                <Link to='contact' className="navbar-button">Contact</Link>
                 <Link to='/' className="signup-button">Sign Up</Link>
             </div>
         </nav>
