@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Signup from "../../pages/Signup/Signup";
-import './Navbar.css'
+import Login from "../../pages/Login/Login";
+import './Navbar.css';
 
 export default function Navbar() {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalType, setModalType] = useState("signup");
 
     const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setModalType("signup");
+    };
+
+    const switchToLogin = () => setModalType("login");
+    const switchToSignup = () => setModalType("signup");
 
     return (
         <>
@@ -26,7 +34,10 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            <Signup isOpen={isModalOpen} onClose={closeModal} />
+            {modalType === "signup"
+                ? <Signup isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToLogin} />
+                : <Login isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToSignup} />
+            }
         </>
     )
 }

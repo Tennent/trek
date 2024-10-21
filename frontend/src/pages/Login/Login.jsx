@@ -1,7 +1,7 @@
 import Modal from "react-modal";
-import "./Signup.css";
+import "./Login.css";
 
-export default function Signup({ isOpen, onClose, onSwitch }) {
+export default function Login({ isOpen, onClose, onSwitch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -10,18 +10,18 @@ export default function Signup({ isOpen, onClose, onSwitch }) {
 
     return (
         <Modal isOpen={isOpen} onRequestClose={onClose} className="custom-modal" overlayClassName="custom-overlay">
-            <div className="signup-container">
-                <form className='signup-form' onSubmit={handleSubmit}>
+            <div className="login-container">
+                <form className='login-form' onSubmit={handleSubmit}>
                     <label htmlFor="userEmail">Email:</label>
                     <input id="userEmail" name="userEmail" type="text" />
                     <label htmlFor="userPassword">Password:</label>
                     <input id="userPassword" name="userPassword" type="password" />
-                    <div className='signup-btn-container'>
-                        <button type="submit" className="signup-button">Sign Up</button>
+                    <div className='login-btn-container'>
+                        <button type="submit" className="login-button">Login</button>
                         <button onClick={onClose} className="close-button">Close</button>
                     </div>
                 </form>
-                <a className="login-redirect" onClick={onSwitch}>Already have an account?</a>
+                <a className="signup-redirect" onClick={onSwitch}>Don't have an account? Register here!</a>
 
                 <div className="modal-logo-container">
                     <img src="/trek-logo.png" alt="trek-logo" className="modal-logo" />
