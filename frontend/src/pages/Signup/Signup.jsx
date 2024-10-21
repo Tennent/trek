@@ -1,7 +1,7 @@
 import Modal from "react-modal";
 import "./Signup.css";
 
-export default function Signup({ isOpen, onClose }) {
+export default function Signup({ isOpen, onClose, onSwitch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ export default function Signup({ isOpen, onClose }) {
                         <button onClick={onClose} className="close-button">Close</button>
                     </div>
                 </form>
-                <a className="login-redirect" href="">Already have an account?</a>
+                <a className="login-redirect" onClick={onSwitch}>Already have an account?</a>
 
                 <div className="modal-logo-container">
                     <img src="/trek-logo.png" alt="trek-logo" className="modal-logo" />
