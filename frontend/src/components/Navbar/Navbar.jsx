@@ -14,6 +14,9 @@ export default function Navbar() {
         setModalType("signup");
     };
 
+    const switchToLogin = () => setModalType("login");
+    const switchToSignup = () => setModalType("signup");
+
     return (
         <>
             <nav className='navbar-container'>
