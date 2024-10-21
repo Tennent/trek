@@ -30,3 +30,19 @@
 
     font-family: "Saira Condensed", sans-serif;
 }
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    background-color: #FFFFFF;
+}
+
+.login-form label {
+    font-size: 1vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #031D40;
+}
