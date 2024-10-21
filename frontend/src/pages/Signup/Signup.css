@@ -30,3 +30,19 @@
     
     font-family: "Saira Condensed", sans-serif;
 }
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form input {
+    background-color: #FFFFFF;
+}
+
+.signup-form label {
+    font-size: 1vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #031D40;
+}
