@@ -62,3 +62,17 @@
     background-color: #066A93;
     transition: transform 500ms ease;
 }
+
+.login-btn-container .login-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #08A771;
+    color: #FFFFFF;
+}
+
+.login-btn-container .close-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #bd1b1b;
+    color: #FFFFFF;
+}
