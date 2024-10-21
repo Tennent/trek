@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Signup from "../../pages/Signup/Signup";
-import './Navbar.css'
+import './Navbar.css';
 
 export default function Navbar() {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalType, setModalType] = useState("signup");
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
