@@ -87,3 +87,14 @@
 .signup-redirect:hover {
     color: #066A93;
 }
+
+.modal-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.modal-logo {
+    width: 12vw;
+    height: auto;
+}
