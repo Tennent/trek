@@ -1,4 +1,5 @@
 import Modal from "react-modal";
+import "./Signup.css";
 
 export default function Signup({ isOpen, onClose }) {
 
