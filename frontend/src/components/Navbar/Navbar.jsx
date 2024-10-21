@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Signup from "../../pages/Signup/Signup";
+import Login from "../../pages/Login/Login";
 import './Navbar.css';
 
 export default function Navbar() {
@@ -33,7 +34,10 @@ export default function Navbar() {
                 </div>
             </nav>
 
-            <Signup isOpen={isModalOpen} onClose={closeModal} />
+            {modalType === "signup"
+                ? <Signup isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToLogin} />
+                : <Login isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToSignup} />
+            }
         </>
     )
 }
