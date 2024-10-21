@@ -9,7 +9,10 @@ export default function Navbar() {
     const [modalType, setModalType] = useState("signup");
 
     const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setModalType("signup");
+    };
 
     return (
         <>
