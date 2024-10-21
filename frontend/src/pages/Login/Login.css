@@ -46,3 +46,19 @@
     font-style: normal;
     color: #031D40;
 }
+
+.login-btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5vh;
+}
+
+.login-btn-container .login-button,
+.close-button {
+    font-size: 1vw;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: #066A93;
+    transition: transform 500ms ease;
+}
