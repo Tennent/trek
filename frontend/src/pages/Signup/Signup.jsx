@@ -12,7 +12,7 @@ export default function Signup({ isOpen, onClose, onSwitch }) {
         <Modal isOpen={isOpen} onRequestClose={onClose} className="custom-modal" overlayClassName="custom-overlay">
             <div className="signup-container">
                 <form className='signup-form' onSubmit={handleSubmit}>
-                    <label htmlFor="userName">Email:</label>
+                    <label htmlFor="userEmail">Email:</label>
                     <input id="userEmail" name="userEmail" type="text" />
                     <label htmlFor="userPassword">Password:</label>
                     <input id="userPassword" name="userPassword" type="password" />
