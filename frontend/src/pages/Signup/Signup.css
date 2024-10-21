@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.custom-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #000000bf;
+}
+
+.custom-modal {
+    position: relative;
+    z-index: 1001;
+
+    width: 20vw;
+    height: auto;
+    padding: 2vw;
+    border-radius: 1vw;
+
+    outline: none;
+    background: #C5DBCE;
+    box-shadow: 0 1vw 2vw #0000001a;
+
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form input {
+    background-color: #FFFFFF;
+}
+
+.signup-form label {
+    font-size: 1vw;
+    font-weight: 400;
+    font-style: normal;
+    color: #031D40;
+}
+
+.signup-btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5vh;
+}
+
+.signup-btn-container .signup-button,
+.close-button {
+    font-size: 1vw;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: #066A93;
+    transition: transform 500ms ease;
+}
+
+.signup-btn-container .signup-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #08A771;
+    color: #FFFFFF;
+}
+
+.signup-btn-container .close-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #bd1b1b;
+    color: #FFFFFF;
+}
+
+.login-redirect {
+    font-size: 0.9vw;
+    cursor: pointer;
+    color: #031D40;
+    transition: transform 500ms ease;
+}
+
+.login-redirect:hover {
+    color: #066A93;
+}
+
+.modal-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.modal-logo {
+    width: 12vw;
+    height: auto;
+}
