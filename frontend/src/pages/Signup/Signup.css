@@ -76,3 +76,14 @@
     background-color: #bd1b1b;
     color: #FFFFFF;
 }
+
+.login-redirect {
+    font-size: 0.9vw;
+    cursor: pointer;
+    color: #031D40;
+    transition: transform 500ms ease;
+}
+
+.login-redirect:hover {
+    color: #066A93;
+}
