@@ -1,10 +1,16 @@
 import Modal from "react-modal";
 
 export default function Signup({ isOpen, onClose }) {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form submitted");
+    }
+
     return (
         <Modal isOpen={isOpen} onRequestClose={onClose} className="custom-modal" overlayClassName="custom-overlay">
             <div className="signup-container">
-                <form className='signup-form'>
+                <form className='signup-form' onSubmit={handleSubmit}>
                     <label htmlFor="userName">Email:</label>
                     <input id="userEmail" name="userEmail" type="text" />
                     <label htmlFor="userPassword">Password:</label>
