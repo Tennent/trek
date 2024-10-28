@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./Manage.css";
 
 export default function Manage() {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
         <div className='manage-container'>
             <div className="manage-title">
@@ -39,7 +42,18 @@ export default function Manage() {
                 </div>
             </div>
 
-            <img className="add-item" src="./icons/manage-add-item-icon.png" alt="add-item-icon" />
+            <div
+                className="add-item-container"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
+                <img
+                    className="add-item"
+                    src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
+                    alt="add-item-icon"
+                />
+            </div>
+
         </div>
     )
 }
