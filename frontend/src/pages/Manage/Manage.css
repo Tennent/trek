@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.manage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin-top: 25vh;
+    margin-bottom: -10vh;
+    gap: 2vh;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    
+    background-color: #08A771;
+}
+
+.manage-title {
+    font-size: 1vw;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    width: 40vw;
+    height: 30vh;
+    
+    background-color: #066A93;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.card-image {
+    width: 15vw;
+    height: auto;
+    margin-right: -7vw;
+    border: solid 1px #031D40;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.card-list-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.card-list {
+    font-size: 1vw;
+    font-weight: 400;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px #031D40;
+}
+
+.card-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3vh;
+}
+
+.add-option,
+.edit-option,
+.delete-option {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+    width: 3vw;
+    aspect-ratio: 1 / 1;
+
+    background-color: #031D40;
+    box-shadow: 0 2px 4px #031D40;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.add-option:hover,
+.edit-option:hover,
+.delete-option:hover {
+    transform: scale(1.08);
+    background-color: #C5DBCE;
+    transform-origin: 800ms;
+}
+
+.add-option img,
+.edit-option img,
+.delete-option img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.add-item {
+    width: 3vw;
+    height: auto;
+    cursor: pointer;
+    transition: opacity 800ms ease;
+}
+
+/* Tablet styles */
+@media (min-width: 721px) and (max-width: 1320px) {
+    .manage-container {
+        margin-top: 5vh;
+        margin-bottom: -20vh;
+    }
+
+    .manage-title {
+        font-size: 1.2vw;
+    }
+    
+    .card-container {
+        width: 55vw;
+    }
+
+    .card-image {
+        width: 20vw;
+        margin-right: -10vw;
+    }
+    
+    .card-list {
+        font-size: 1.2vw;
+    }
+    
+    .add-option,
+    .edit-option,
+    .delete-option {
+        width: 3.5vw;
+    }
+    
+    .add-item {
+        width: 3.5vw;
+    }
+}
+
+/* Mobile styles */
+@media (min-width: 431px) and (max-width: 720px) {
+    .manage-container {
+        margin-top: 5vh;
+        margin-bottom: -15vh;
+    }
+
+    .manage-title {
+        font-size: 1.5vw;
+    }
+    
+    .card-container {
+        width: 65vw;
+    }
+
+    .card-image {
+        width: 25vw;
+        margin-right: -12vw;
+    }
+    
+    .card-list {
+        font-size: 1.5vw;
+    }
+    
+    .add-option,
+    .edit-option,
+    .delete-option {
+        width: 4vw;
+    }
+    
+    .add-item {
+        width: 4vw;
+    }
+}
+
+/* Small-screen styles */
+@media (min-width: 321px) and (max-width: 430px) {
+    .manage-container {
+        margin-top: 0;
+        margin-bottom: -20vh;
+    }
+
+    .manage-title {
+        font-size: 2vw;
+    }
+    
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr; 
+        
+        align-items: center;
+        justify-items: center;
+        width: 75vw;
+    }
+
+    .card-image {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 5vh;
+        width: 35vw;
+    }
+    
+    .card-list {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 2vw;
+        margin-top: 5vh;
+        margin-left: -14vw;
+    }
+
+    .card-menu-container {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .add-option,
+    .edit-option,
+    .delete-option {
+        width: 6vw;
+    }
+    
+    .add-item {
+        width: 6vw;
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 320px) {
+    .manage-container {
+        display: flex;
+        margin-top: 0;
+        margin-bottom: -20vh;
+    }
+
+    .manage-title {
+        font-size: 3.5vw;
+    }
+    
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        
+        justify-content: space-around;
+        align-items: center;
+        width: 60vw;
+    }
+
+    .card-image {
+        width: 50vw;
+        margin-right: 0;
+    }
+    
+    .card-list {
+        font-size: 3.5vw;
+        text-align: center;
+    }
+
+    .card-menu-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .add-option,
+    .edit-option,
+    .delete-option {
+        width: 8vw;
+    }
+    
+    .add-item {
+        width: 8vw;
+    }
+}
