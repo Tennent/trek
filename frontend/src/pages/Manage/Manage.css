@@ -23,3 +23,10 @@ body {
     
     background-color: #08A771;
 }
+
+.manage-title {
+    font-size: 1vw;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-align: center;
+}
