@@ -50,3 +50,21 @@ body {
     border: solid 1px #031D40;
     box-shadow: 0 2px 4px #031D40;
 }
+
+.card-list-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.card-list {
+    font-size: 1vw;
+    font-weight: 400;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px #031D40;
+}
