@@ -99,3 +99,8 @@ body {
     height: auto;
     object-fit: cover;
 }
+
+.add-item {
+    width: 3vw;
+    height: auto;
+}
