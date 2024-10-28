@@ -42,3 +42,11 @@ body {
     background-color: #066A93;
     box-shadow: 0 2px 4px #031D40;
 }
+
+.card-image {
+    width: 15vw;
+    height: auto;
+    margin-right: -7vw;
+    border: solid 1px #031D40;
+    box-shadow: 0 2px 4px #031D40;
+}
