@@ -68,3 +68,34 @@ body {
     color: #FFFFFF;
     text-shadow: 0 2px 4px #031D40;
 }
+
+.card-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3vh;
+}
+
+.add-option,
+.edit-option,
+.delete-option {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+    width: 3vw;
+    aspect-ratio: 1 / 1;
+
+    background-color: #031D40;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.add-option img,
+.edit-option img,
+.delete-option img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
