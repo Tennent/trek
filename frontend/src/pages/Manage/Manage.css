@@ -91,6 +91,16 @@ body {
 
     background-color: #031D40;
     box-shadow: 0 2px 4px #031D40;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.add-option:hover,
+.edit-option:hover,
+.delete-option:hover {
+    transform: scale(1.08);
+    background-color: #C5DBCE;
+    transform-origin: 800ms;
 }
 
 .add-option img,
