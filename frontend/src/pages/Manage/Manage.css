@@ -30,3 +30,15 @@ body {
     color: #FFFFFF;
     text-align: center;
 }
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    width: 40vw;
+    height: 30vh;
+    
+    background-color: #066A93;
+    box-shadow: 0 2px 4px #031D40;
+}
