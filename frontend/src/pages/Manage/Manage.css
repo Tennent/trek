@@ -114,6 +114,8 @@ body {
 .add-item {
     width: 3vw;
     height: auto;
+    cursor: pointer;
+    transition: opacity 800ms ease;
 }
 
 /* Tablet styles */
