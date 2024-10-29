@@ -117,3 +117,19 @@ body {
     padding: 0.5rem;
     margin: 0.5rem 0;
 }
+
+.track-last-service,
+.track-inspection {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #031D40
+}
+
+.track-details-milage,
+.track-last-service-counter,
+.track-inspection-counter {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #031D40;
+}
