@@ -27,3 +27,9 @@ body {
 
     background-color: #08A771;
 }
+
+.track-title {
+    grid-area: title;
+    text-align: center;
+    padding: 1rem;
+}
