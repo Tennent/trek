@@ -32,7 +32,7 @@ body {
     text-align: center;
 }
 
-.card-container {
+.manage-container .card-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -129,7 +129,7 @@ body {
         font-size: 1.2vw;
     }
     
-    .card-container {
+    .manage-container .card-container {
         width: 55vw;
     }
 
@@ -164,7 +164,7 @@ body {
         font-size: 1.5vw;
     }
     
-    .card-container {
+    .manage-container .card-container {
         width: 65vw;
     }
 
@@ -199,7 +199,7 @@ body {
         font-size: 2vw;
     }
     
-    .card-container {
+    .manage-container .card-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto 1fr; 
@@ -256,7 +256,7 @@ body {
         font-size: 3.5vw;
     }
     
-    .card-container {
+    .manage-container .card-container {
         display: flex;
         flex-direction: column;
         
