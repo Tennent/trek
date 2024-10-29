@@ -87,3 +87,12 @@ body {
     font-weight: 800;
     color: #031D40;
 }
+
+.track-service-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 2rem;
+    margin: 2rem 0;
+}
