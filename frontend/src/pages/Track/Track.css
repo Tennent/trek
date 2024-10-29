@@ -33,3 +33,12 @@ body {
     text-align: center;
     padding: 1rem;
 }
+
+.track-image {
+    grid-area: image;
+    overflow: hidden;
+    align-self: baseline;
+
+    width: 100%;
+    height: auto;
+}
