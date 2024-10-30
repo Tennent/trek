@@ -20,25 +20,25 @@ export default function Track() {
                 </h3>
                 <div className="track-details-milage-meter">
                     <p className="track-details-milage">
-                        Placeholder
+                        Milage Placeholder
                     </p>
                 </div>
                 <div className="track-service-details-container">
                     <p className="track-last-service">
-                        Placeholder
+                        Service Date Placeholder
                     </p>
                     <div className="track-last-service-chart">
                         <p className="track-last-service-counter">
-                            Placeholder
+                            Service Counter Placeholder
                         </p>
                     </div>
                     <div className="track-inspection-chart">
                         <p className="track-inspection-counter">
-                            Placeholder
+                            Inspection Counter Placeholder
                         </p>
                     </div>
                     <p className="track-inspection">
-                        Placeholder
+                        Inspection Date Placeholder
                     </p>
                 </div>
             </div>
