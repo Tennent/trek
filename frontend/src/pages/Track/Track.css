@@ -125,6 +125,7 @@ body {
 .track-inspection {
     font-size: 1.2rem;
     font-weight: 500;
+    text-align: center;
     color: #031D40
 }
 
@@ -189,4 +190,72 @@ body {
 
 .full-histroy-redirect:hover {
     color: #066A93;
+}
+
+/* Tablet styles */
+@media (min-width: 721px) and (max-width: 1100px) {
+    .track-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Mobile styles */
+@media (min-width: 431px) and (max-width: 720px) {
+    .track-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .track-image {
+        align-self: center;
+        width: 80%;
+        height: auto;
+    }
+
+    .track-brand-logo {
+        max-width: 8%;
+        height: auto;
+    }
+
+    .track-car-identifier,
+    .track-details-title,
+    .track-histroy-title {
+        font-size: 1.5rem;
+    }
+
+    .track-last-service-chart,
+    .track-inspection-chart {
+        width: min(8rem, 20vw);
+    }
+
+    .track-last-service,
+    .track-inspection,
+    .track-details-milage,
+    .track-last-service-counter,
+    .track-inspection-counter {
+        font-size: 1rem;
+    }
+
+    .track-histroy-table th,
+    .track-histroy-table td,
+    .full-histroy-redirect {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small-screen styles */
+@media (min-width: 321px) and (max-width: 430px) {
+    .track-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 320px) {
+    .track-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
