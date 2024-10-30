@@ -23,3 +23,9 @@ body {
 
     background-color: #08A771;
 }
+
+.save-title {
+    grid-area: title;
+    text-align: center;
+    padding: 1rem;
+}
