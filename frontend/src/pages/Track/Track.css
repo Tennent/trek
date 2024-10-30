@@ -172,3 +172,13 @@ body {
     font-weight: 700;
     background-color: #031D40;
 }
+
+.full-histroy-redirect {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 1rem;
+
+    color: #031D40;
+    text-decoration: none;
+}
