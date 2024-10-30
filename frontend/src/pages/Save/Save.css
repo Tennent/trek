@@ -154,3 +154,16 @@ body {
     padding: 0.5rem;
     margin-bottom: 2rem;
 }
+
+.save-operation-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(23rem, 30vw);
+    height: min(4rem, 30vw);
+
+    background: #066A93;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
