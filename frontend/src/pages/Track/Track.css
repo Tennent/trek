@@ -141,3 +141,13 @@ body {
     background-color: #C5DBCE;
     box-shadow: 0 2px 4px #031D40;
 }
+
+.track-histroy-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+    font-weight: 800;
+    color: #031D40;
+}
