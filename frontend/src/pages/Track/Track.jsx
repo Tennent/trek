@@ -1,6 +1,10 @@
 export default function Track() {
     return (
         <div className='track-container'>
+            <div className="track-title">
+                <h1>TRACK</h1>
+            </div>
+
             <div className="track-image-card">
                 <img className="track-image" src="" alt="" />
             </div>
