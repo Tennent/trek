@@ -138,7 +138,7 @@ body {
     color: #031D40;
 }
 
-.track-histroy-card {
+.track-history-card {
     grid-area: history;
     padding: 1.5rem;
 
@@ -146,7 +146,7 @@ body {
     box-shadow: 0 2px 4px #031D40;
 }
 
-.track-histroy-title {
+.track-history-title {
     text-align: center;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -156,28 +156,28 @@ body {
     color: #031D40;
 }
 
-.track-histroy-table {
+.track-history-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1rem;
     background-color: #066A93;
 }
 
-.track-histroy-table th,
-.track-histroy-table td {
+.track-history-table th,
+.track-history-table td {
     padding: 0.75rem;
     text-align: left;
     color: #FFFFFF;
     border-bottom: 1px solid #eee;
 }
 
-.track-histroy-table th {
+.track-history-table th {
     font-size: 1rem;
     font-weight: 700;
     background-color: #031D40;
 }
 
-.full-histroy-redirect {
+.full-history-redirect {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -188,7 +188,7 @@ body {
     transition: transform 500ms ease;
 }
 
-.full-histroy-redirect:hover {
+.full-history-redirect:hover {
     color: #066A93;
 }
 
