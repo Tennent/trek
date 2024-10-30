@@ -1,3 +1,5 @@
+import "./Track.css";
+
 export default function Track() {
     return (
         <div className='track-container'>
