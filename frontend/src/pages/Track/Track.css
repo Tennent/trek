@@ -92,7 +92,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -181,4 +181,9 @@ body {
 
     color: #031D40;
     text-decoration: none;
+    transition: transform 500ms ease;
+}
+
+.full-histroy-redirect:hover {
+    color: #066A93;
 }
