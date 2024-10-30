@@ -133,3 +133,10 @@ body {
     font-size: 1.2rem;
     font-weight: 600;
 }
+
+.save-maintenance-detail-item,
+.save-operation-detail-item {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 1rem;
+}
