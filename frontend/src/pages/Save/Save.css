@@ -114,3 +114,10 @@ body {
     color: #066A93;
     animation: pulseColor 200ms infinite;
 }
+
+.save-maintenance-details-container,
+.save-operation-details-container {
+    display: flex;
+    align-self: baseline;
+    margin-left: 2rem;
+}
