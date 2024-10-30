@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import "./Save.css";
 
 export default function Save() {
     const [activeMaintenancePeriod, setActiveMaintenancePeriod] = useState("weekly");
     const [activeOperationPeriod, setActiveOperationPeriod] = useState("weekly");
 
     const handleMaintenancePeriodClick = (periodType) => {
-        setActiveMaintenancePeriod(activeMaintenancePeriod === periodType ? null : periodType);
+        setActiveMaintenancePeriod(periodType);
     };
 
     const handleOperationPeriodClick = (periodType) => {
-        setActiveOperationPeriod(activeOperationPeriod === periodType ? null : periodType);
+        setActiveOperationPeriod(periodType);
     };
 
     return (
