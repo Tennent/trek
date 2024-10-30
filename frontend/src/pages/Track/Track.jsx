@@ -60,6 +60,12 @@ export default function Track() {
                     </thead>
                     <tbody>
                         {/* Table rows will be added here dynamically */}
+                        <td>Placeholder Date</td>
+                        <td>Placeholder Partner</td>
+                        <td>Placeholder Address</td>
+                        <td>Placeholder Type</td>
+                        <td>Placeholder Description</td>
+                        <td>Placeholder Price</td>
                     </tbody>
                 </table>
                 <a className="full-history-redirect" href="">
