@@ -121,3 +121,9 @@ body {
     align-self: baseline;
     margin-left: 2rem;
 }
+
+.save-maintenance-details-list,
+.save-operation-details-list {
+    list-style: square;
+    color: #031D40;
+}
