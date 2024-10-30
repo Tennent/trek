@@ -112,8 +112,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    width: 10rem;
-    height: 10rem;
+    width: min(10rem, 25vw);
+    aspect-ratio: 1;
     border-radius: 50%;
 
     background: #ffffff;
