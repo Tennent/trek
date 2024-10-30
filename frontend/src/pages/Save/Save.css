@@ -76,3 +76,14 @@ body {
     background-color: #C5DBCE;
     box-shadow: 0 2px 4px #031D40;
 }
+
+.save-maintenance-title,
+.save-operation-title {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #031D40;
+}
