@@ -43,11 +43,11 @@ export default function Track() {
                 </div>
             </div>
 
-            <div className="track-histroy-card">
-                <h3 className="track-histroy-title">
-                    Histroy
+            <div className="track-history-card">
+                <h3 className="track-history-title">
+                    History
                 </h3>
-                <table className="track-histroy-table">
+                <table className="track-history-table">
                     <thead>
                         <tr>
                             <th>Date</th>
@@ -62,8 +62,8 @@ export default function Track() {
                         {/* Table rows will be added here dynamically */}
                     </tbody>
                 </table>
-                <a className="full-histroy-redirect" href="">
-                    See full histroy
+                <a className="full-history-redirect" href="">
+                    See full history
                 </a>
             </div>
         </div>
