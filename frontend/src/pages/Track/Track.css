@@ -41,6 +41,9 @@ body {
 
     width: 100%;
     height: auto;
+
+    border: solid 1px #031D40;
+    box-shadow: 0 2px 4px #031D40;
 }
 
 .track-info-card {
