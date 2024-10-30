@@ -31,13 +31,22 @@ export default function Save() {
                         Maintenance
                     </h2>
                     <div className="save-maintenance-period-container">
-                        <p className="save-maintenance-period">
+                        <p
+                            className={`save-maintenance-period ${activeMaintenancePeriod === "weekly" ? "active" : ""}`}
+                            onClick={() => handleMaintenancePeriodClick("weekly")}
+                        >
                             Weekly
                         </p>
-                        <p className="save-maintenance-period">
+                        <p
+                            className={`save-maintenance-period ${activeMaintenancePeriod === "monthly" ? "active" : ""}`}
+                            onClick={() => handleMaintenancePeriodClick("monthly")}
+                        >
                             Monthly
                         </p>
-                        <p className="save-maintenance-period">
+                        <p
+                            className={`save-maintenance-period ${activeMaintenancePeriod === "yearly" ? "active" : ""}`}
+                            onClick={() => handleMaintenancePeriodClick("yearly")}
+                        >
                             Yearly
                         </p>
                     </div>
@@ -62,13 +71,22 @@ export default function Save() {
                         Operation
                     </h2>
                     <div className="save-operation-period-container">
-                        <p className="save-operation-period">
+                        <p
+                            className={`save-operation-period ${activeOperationPeriod === "weekly" ? "active" : ""}`}
+                            onClick={() => handleOperationPeriodClick("weekly")}
+                        >
                             Weekly
                         </p>
-                        <p className="save-operation-period">
+                        <p
+                            className={`save-operation-period ${activeOperationPeriod === "monthly" ? "active" : ""}`}
+                            onClick={() => handleOperationPeriodClick("monthly")}
+                        >
                             Monthly
                         </p>
-                        <p className="save-operation-period">
+                        <p
+                            className={`save-operation-period ${activeOperationPeriod === "yearly" ? "active" : ""}`}
+                            onClick={() => handleOperationPeriodClick("yearly")}
+                        >
                             Yearly
                         </p>
                     </div>
