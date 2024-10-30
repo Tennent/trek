@@ -53,3 +53,11 @@ body {
     font-weight: 800;
     color: #031D40;
 }
+
+.save-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    gap: 2rem;
+}
