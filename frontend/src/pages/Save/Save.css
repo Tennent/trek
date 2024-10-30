@@ -29,3 +29,27 @@ body {
     text-align: center;
     padding: 1rem;
 }
+
+.save-vehicle-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: -2rem;
+    padding: 0;
+    gap: 1rem;
+}
+
+.save-brand-logo {
+    max-width: 10%;
+    height: auto;
+}
+
+.save-car-identifier {
+    text-align: center;
+    margin: 0;
+
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #031D40;
+}
