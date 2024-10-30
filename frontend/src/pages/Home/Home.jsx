@@ -21,7 +21,9 @@ export default function Home() {
                     </Link>
                 </div>
                 <div className="save-card">
-                    <img src="/icons/save-icon.png" alt="save-card" />
+                    <Link to="save">
+                        <img src="/icons/save-icon.png" alt="save-card" />
+                    </Link>
                 </div>
             </div>
         </div>

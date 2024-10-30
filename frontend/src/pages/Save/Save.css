@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.save-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 1.5rem;
+    padding: 2rem;
+    margin-top: 20%;
+    height: 100%;
+    width: 100%;
+
+    background-color: #08A771;
+}
+
+.save-title {
+    grid-area: title;
+    text-align: center;
+    padding: 1rem;
+}
+
+.save-vehicle-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: -2rem;
+    padding: 0;
+    gap: 1rem;
+}
+
+.save-brand-logo {
+    max-width: 10%;
+    height: auto;
+}
+
+.save-car-identifier {
+    text-align: center;
+    margin: 0;
+
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #031D40;
+}
+
+.save-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    gap: 2rem;
+}
+
+.save-maintenance-card,
+.save-operation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 30rem;
+    padding: 0;
+    gap: 1rem;
+
+    background-color: #C5DBCE;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.save-maintenance-title,
+.save-operation-title {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #031D40;
+}
+
+.save-maintenance-period-container,
+.save-operation-period-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 20rem;
+    margin-top: -2rem;
+    margin-bottom: -2rem;
+}
+
+.save-maintenance-period,
+.save-operation-period {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #031D40;
+
+    cursor: pointer;
+    transition: color 300ms ease-in-out;
+}
+
+.save-maintenance-period.active,
+.save-operation-period.active {
+    color: #066A93;
+    animation: pulseColor 200ms infinite;
+}
+
+.save-maintenance-details-container,
+.save-operation-details-container {
+    display: flex;
+    align-self: baseline;
+    margin-left: 2rem;
+}
+
+.save-maintenance-details-list,
+.save-operation-details-list {
+    list-style: square;
+    color: #031D40;
+}
+
+.save-maintenance-detail-title,
+.save-operation-detail-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.save-maintenance-detail-item,
+.save-operation-detail-item {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 1rem;
+}
+
+.save-maintenance-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(15rem, 50vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    background: #066A93;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.save-operation-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(23rem, 70vw);
+    height: min(4rem, 70vw);
+
+    background: #066A93;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Tablet styles */
+@media (min-width: 721px) and (max-width: 1050px) {
+    .save-card-container {
+        flex-direction: column;
+    }
+}
+
+/* Mobile styles */
+@media (min-width: 431px) and (max-width: 720px) {
+    .save-card-container {
+        flex-direction: column;
+    }
+}
+
+/* Small-screen styles */
+@media (min-width: 321px) and (max-width: 430px) {
+    .save-card-container {
+        flex-direction: column;
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 320px) {
+    .save-card-container {
+        flex-direction: column;
+    }
+}
