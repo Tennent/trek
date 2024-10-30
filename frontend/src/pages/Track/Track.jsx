@@ -5,9 +5,7 @@ export default function Track() {
                 <h1>TRACK</h1>
             </div>
 
-            <div className="track-image-card">
-                <img className="track-image" src="" alt="" />
-            </div>
+            <img className="track-image" src="./dummy-user-car.png" alt="user-car-image" />
 
             <div className="track-info-card">
                 <img className="track-brand-logo" src="" alt="" />
