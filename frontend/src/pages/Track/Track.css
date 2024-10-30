@@ -158,3 +158,17 @@ body {
     margin-bottom: 1rem;
     background-color: #066A93;
 }
+
+.track-histroy-table th,
+.track-histroy-table td {
+    padding: 0.75rem;
+    text-align: left;
+    color: #FFFFFF;
+    border-bottom: 1px solid #eee;
+}
+
+.track-histroy-table th {
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #031D40;
+}
