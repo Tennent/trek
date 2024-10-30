@@ -133,3 +133,11 @@ body {
     font-weight: 500;
     color: #031D40;
 }
+
+.track-histroy-card {
+    grid-area: history;
+    padding: 1.5rem;
+
+    background-color: #C5DBCE;
+    box-shadow: 0 2px 4px #031D40;
+}
