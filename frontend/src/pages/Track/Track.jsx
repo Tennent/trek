@@ -8,9 +8,9 @@ export default function Track() {
             <img className="track-image" src="./dummy-user-car.png" alt="user-car-image" />
 
             <div className="track-info-card">
-                <img className="track-brand-logo" src="" alt="" />
+                <img className="track-brand-logo" src="./dummy-user-brand.png" alt="user-car-brand" />
                 <h2 className="track-car-identifier">
-                    Placeholder
+                    Car Identifier Placeholder
                 </h2>
             </div>
 
