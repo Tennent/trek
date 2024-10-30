@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.track-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "title title"
+        "image identifier"
+        "image details"
+        "history history";
+
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin-top: 20%;
+    height: 100%;
+    width: 100%;
+
+    background-color: #08A771;
+}
+
+.track-title {
+    grid-area: title;
+    text-align: center;
+    padding: 1rem;
+}
+
+.track-image {
+    grid-area: image;
+    overflow: hidden;
+    align-self: baseline;
+
+    width: 100%;
+    height: auto;
+
+    border: solid 1px #031D40;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.track-info-card {
+    grid-area: identifier;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+    gap: 1rem;
+
+    background-color: #C5DBCE;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.track-brand-logo {
+    max-width: 10%;
+    height: auto;
+}
+
+.track-car-identifier {
+    text-align: center;
+    margin: 0;
+
+    font-size: 2rem;
+    font-weight: 800;
+    color: #031D40;
+}
+
+.track-details-card {
+    grid-area: details;
+    padding: 1.5rem;
+
+    background-color: #C5DBCE;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.track-details-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+    font-weight: 800;
+    color: #031D40;
+}
+
+.track-service-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.track-details-milage-meter {
+    background: #ffffff;
+    padding: 0.2rem;
+    margin: 0.5rem 0;
+}
+
+.track-last-service-chart,
+.track-inspection-chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(10rem, 25vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    background: #ffffff;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.track-last-service,
+.track-inspection {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    color: #031D40
+}
+
+.track-details-milage,
+.track-last-service-counter,
+.track-inspection-counter {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #031D40;
+}
+
+.track-history-card {
+    grid-area: history;
+    padding: 1.5rem;
+
+    background-color: #C5DBCE;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.track-history-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+    font-weight: 800;
+    color: #031D40;
+}
+
+.track-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    background-color: #066A93;
+}
+
+.track-history-table th,
+.track-history-table td {
+    padding: 0.75rem;
+    text-align: left;
+    color: #FFFFFF;
+    border-bottom: 1px solid #eee;
+}
+
+.track-history-table th {
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: #031D40;
+}
+
+.full-history-redirect {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 1rem;
+
+    color: #031D40;
+    text-decoration: none;
+    transition: transform 500ms ease;
+}
+
+.full-history-redirect:hover {
+    color: #066A93;
+}
+
+/* Tablet styles */
+@media (min-width: 721px) and (max-width: 1100px) {
+    .track-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Mobile styles */
+@media (min-width: 431px) and (max-width: 720px) {
+    .track-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .track-image {
+        align-self: center;
+        width: 80%;
+        height: auto;
+    }
+
+    .track-brand-logo {
+        max-width: 8%;
+        height: auto;
+    }
+
+    .track-car-identifier,
+    .track-details-title,
+    .track-histroy-title {
+        font-size: 1.5rem;
+    }
+
+    .track-last-service-chart,
+    .track-inspection-chart {
+        width: min(8rem, 20vw);
+    }
+
+    .track-last-service,
+    .track-inspection,
+    .track-details-milage,
+    .track-last-service-counter,
+    .track-inspection-counter {
+        font-size: 1rem;
+    }
+
+    .track-histroy-table th,
+    .track-histroy-table td,
+    .full-histroy-redirect {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small-screen styles */
+@media (min-width: 321px) and (max-width: 430px) {
+    .track-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Extra small screen styles */
+@media (max-width: 320px) {
+    .track-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -16,7 +16,9 @@ export default function Home() {
                     </Link>
                 </div>
                 <div className="track-card">
-                    <img src="/icons/track-icon.png" alt="track-card" />
+                    <Link to="track">
+                        <img src="/icons/track-icon.png" alt="track-card" />
+                    </Link>
                 </div>
                 <div className="save-card">
                     <img src="/icons/save-icon.png" alt="save-card" />
