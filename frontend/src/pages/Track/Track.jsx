@@ -23,22 +23,24 @@ export default function Track() {
                         Placeholder
                     </p>
                 </div>
-                <p className="track-last-service">
-                    Placeholder
-                </p>
-                <div className="track-last-service-chart">
-                    <p className="track-last-service-counter">
+                <div className="track-service-details-container">
+                    <p className="track-last-service">
+                        Placeholder
+                    </p>
+                    <div className="track-last-service-chart">
+                        <p className="track-last-service-counter">
+                            Placeholder
+                        </p>
+                    </div>
+                    <div className="track-inspection-chart">
+                        <p className="track-inspection-counter">
+                            Placeholder
+                        </p>
+                    </div>
+                    <p className="track-inspection">
                         Placeholder
                     </p>
                 </div>
-                <div className="track-inspection-chart">
-                    <p className="track-inspection-counter">
-                        Placeholder
-                    </p>
-                </div>
-                <p className="track-inspection">
-                    Placeholder
-                </p>
             </div>
 
             <div className="track-histroy-card">
