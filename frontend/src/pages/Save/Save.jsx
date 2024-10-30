@@ -1,11 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 export default function Save() {
     const [activeMaintenancePeriod, setActiveMaintenancePeriod] = useState(null);
+    const [activeOperationPeriod, setActiveOperationPeriod] = useState(null);
 
     const handleMaintenancePeriodClick = (periodType) => {
         setActiveMaintenancePeriod(activeMaintenancePeriod === periodType ? null : periodType);
-      };
+    };
+
+    const handleOperationPeriodClick = (periodType) => {
+        setActiveOperationPeriod(activeOperationPeriod === periodType ? null : periodType);
+    };
 
     return (
         <div className='save-container'>
