@@ -51,7 +51,7 @@ export default function Save() {
                             Yearly
                         </p>
                     </div>
-                    <div className="save-maitenance-details-container">
+                    <div className="save-maintenance-details-container">
                         <ul className="save-maintenance-details-list">
                             <li className="save-maintenance-detail-title">
                                 Service
