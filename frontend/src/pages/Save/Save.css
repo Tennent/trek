@@ -127,3 +127,9 @@ body {
     list-style: square;
     color: #031D40;
 }
+
+.save-maintenance-detail-title,
+.save-operation-detail-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
