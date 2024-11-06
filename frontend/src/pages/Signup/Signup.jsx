@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "react-modal";
+import postUser from "../../services/postUser";
 import "./Signup.css";
 
 export default function Signup({ isOpen, onClose, onSwitch }) {
@@ -7,15 +8,16 @@ export default function Signup({ isOpen, onClose, onSwitch }) {
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form submitted");
-    }
+    async function handleRegister(e) {
+        e.preventDefault()
+        const messageBody = { user_name: userName, user_password: userPassword, email: userEmail };
+        await postUser(messageBody);
+    };
 
     return (
         <Modal isOpen={isOpen} onRequestClose={onClose} className="custom-modal" overlayClassName="custom-overlay">
             <div className="signup-container">
-                <form className='signup-form' onSubmit={handleSubmit}>
+                <form className='signup-form' onSubmit={handleRegister}>
                     <label htmlFor="userName">Username:</label>
                     <input id="userName" name="userName" type="text" />
                     <label htmlFor="userEmail">Email:</label>
