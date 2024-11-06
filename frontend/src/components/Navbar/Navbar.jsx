@@ -4,7 +4,7 @@ import Signup from "../../pages/Signup/Signup";
 import Login from "../../pages/Login/Login";
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ user }) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalType, setModalType] = useState("signup");
@@ -30,7 +30,10 @@ export default function Navbar() {
                     <Link to='/' className="navbar-button">Home</Link>
                     <Link to='about' className="navbar-button">About</Link>
                     <Link to='contact' className="navbar-button">Contact</Link>
-                    <button className="signup-button" onClick={openModal}>Sign Up</button>
+                    {!user.loggedIn 
+                        ? <button className="signup-button" onClick={openModal}>Sign Up</button>
+                        : <img className="user-icon" src="/icons/user-icon.png" alt="user-icon" />
+                    }
                 </div>
             </nav>
 
