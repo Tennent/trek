@@ -34,13 +34,14 @@ export default function Navbar({ user }) {
                     {!user.loggedIn
                         ? <button className="signup-button" onClick={openModal}>Sign Up</button>
                         : <div
+                            className="navbar-user-container"
                             onMouseEnter={() => setIsDropdownHovered(true)}
                             onMouseLeave={() => setIsDropdownHovered(false)}
                         >
                             <img className="user-icon" src="/icons/user-icon.png" alt="user-icon" />
 
                             {isDropdownHovered && (
-                                <div className={`navbar-user-dropdown-container`}>
+                                <div className="navbar-user-dropdown-container">
                                     <div className="navbar-user-dropdown-item">
                                         <button className="navbar-user-dropdown-button">
                                             Settings
