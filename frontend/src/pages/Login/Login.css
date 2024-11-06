@@ -37,12 +37,25 @@
 }
 
 .login-form input {
+    color: black;
     background-color: #FFFFFF;
+    padding: 0.5vw 1vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 0.8vw;
+    margin-bottom: 1vh;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 .login-form label {
     font-size: 1vw;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     color: #031D40;
 }
