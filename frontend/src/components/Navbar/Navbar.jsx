@@ -4,7 +4,7 @@ import Signup from "../../pages/Signup/Signup";
 import Login from "../../pages/Login/Login";
 import './Navbar.css';
 
-export default function Navbar({ user }) {
+export default function Navbar({ user, setUser }) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalType, setModalType] = useState("signup");
@@ -61,7 +61,7 @@ export default function Navbar({ user }) {
 
             {modalType === "signup"
                 ? <Signup isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToLogin} />
-                : <Login isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToSignup} />
+                : <Login isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToSignup} user={user} setUser={setUser} />
             }
         </>
     )
