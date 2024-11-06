@@ -24,9 +24,9 @@ export default function Login({ isOpen, onClose, onSwitch }) {
             <div className="login-container">
                 <form className='login-form' onSubmit={handleLogin}>
                     <label htmlFor="userName">Username:</label>
-                    <input id="userName" name="userName" type="text" />
+                    <input id="userName" name="userName" type="text" value={userName} onChange={(e) => setUserName(e.target.value)} />
                     <label htmlFor="userPassword">Password:</label>
-                    <input id="userPassword" name="userPassword" type="password" />
+                    <input id="userPassword" name="userPassword" type="password" value={userPassword} onChange={(e) => setUserPassword(e.target.value)} />
                     <div className='login-btn-container'>
                         <button type="submit" className="login-button">Login</button>
                         <button onClick={onClose} className="close-button">Close</button>
