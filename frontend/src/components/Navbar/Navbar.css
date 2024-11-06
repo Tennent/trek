@@ -71,6 +71,11 @@
     color: #FFFFFF;
 }
 
+.user-icon {
+    width: 2.5vw;
+    height: auto;
+}
+
 /* Tablet styles */
 @media (min-width: 721px) and (max-width: 1320px) {
     .navbar-container {
