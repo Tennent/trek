@@ -2,6 +2,8 @@ import Modal from "react-modal";
 import "./Login.css";
 
 export default function Login({ isOpen, onClose, onSwitch }) {
+    const [userEmail, setUserEmail] = useState("");
+    const [userPassword, setUserPassword] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
