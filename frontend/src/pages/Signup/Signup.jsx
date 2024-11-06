@@ -10,7 +10,7 @@ export default function Signup({ isOpen, onClose, onSwitch }) {
 
     async function handleRegister(e) {
         e.preventDefault()
-        const messageBody = { user_name: userName, user_password: userPassword, email: userEmail };
+        const messageBody = { user_name: userName, password: userPassword, email: userEmail };
         await postUser(messageBody);
     };
 
