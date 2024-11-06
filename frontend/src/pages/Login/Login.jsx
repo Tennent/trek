@@ -5,20 +5,26 @@ import "./Login.css";
 
 export default function Login({ isOpen, onClose, onSwitch }) {
     const navigate = useNavigate();
-    const [userEmail, setUserEmail] = useState("");
+    const [userName, setUserName] = useState("");
     const [userPassword, setUserPassword] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Form submitted");
-    }
+    async function handleLogin(e) {
+        e.preventDefault()
+        const messageBody = { user_name: userName, password: userPassword };
+        const data = await loginUser(messageBody);
+
+        if (!data.error) {
+            setUser(data);
+            navigate('/');
+        }
+    };
 
     return (
         <Modal isOpen={isOpen} onRequestClose={onClose} className="custom-modal" overlayClassName="custom-overlay">
             <div className="login-container">
-                <form className='login-form' onSubmit={handleSubmit}>
-                    <label htmlFor="userEmail">Email:</label>
-                    <input id="userEmail" name="userEmail" type="text" />
+                <form className='login-form' onSubmit={handleLogin}>
+                    <label htmlFor="userName">Username:</label>
+                    <input id="userName" name="userName" type="text" />
                     <label htmlFor="userPassword">Password:</label>
                     <input id="userPassword" name="userPassword" type="password" />
                     <div className='login-btn-container'>
