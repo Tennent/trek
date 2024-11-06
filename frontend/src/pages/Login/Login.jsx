@@ -1,7 +1,10 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Modal from "react-modal";
 import "./Login.css";
 
 export default function Login({ isOpen, onClose, onSwitch }) {
+    const navigate = useNavigate();
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
 
