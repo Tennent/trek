@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 import Modal from "react-modal";
+import loginUser from '../../services/loginUser';
 import "./Login.css";
 
-export default function Login({ isOpen, onClose, onSwitch }) {
-    const navigate = useNavigate();
+export default function Login({ isOpen, onClose, onSwitch, user, setUser }) {
     const [userName, setUserName] = useState("");
     const [userPassword, setUserPassword] = useState("");
 
@@ -15,7 +14,7 @@ export default function Login({ isOpen, onClose, onSwitch }) {
 
         if (!data.error) {
             setUser(data);
-            navigate('/');
+            onClose();
         }
     };
 
