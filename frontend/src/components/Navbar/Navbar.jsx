@@ -8,6 +8,7 @@ export default function Navbar({ user }) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalType, setModalType] = useState("signup");
+    const [isDropdownHovered, setIsDropdownHovered] = useState(false);
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => {
@@ -30,9 +31,29 @@ export default function Navbar({ user }) {
                     <Link to='/' className="navbar-button">Home</Link>
                     <Link to='about' className="navbar-button">About</Link>
                     <Link to='contact' className="navbar-button">Contact</Link>
-                    {!user.loggedIn 
+                    {!user.loggedIn
                         ? <button className="signup-button" onClick={openModal}>Sign Up</button>
-                        : <img className="user-icon" src="/icons/user-icon.png" alt="user-icon" />
+                        : <div
+                            onMouseEnter={() => setIsDropdownHovered(true)}
+                            onMouseLeave={() => setIsDropdownHovered(false)}
+                        >
+                            <img className="user-icon" src="/icons/user-icon.png" alt="user-icon" />
+
+                            {isDropdownHovered && (
+                                <div className={`navbar-user-dropdown-container`}>
+                                    <div className="navbar-user-dropdown-item">
+                                        <button className="navbar-user-dropdown-button">
+                                            Settings
+                                        </button>
+                                    </div>
+                                    <div className="navbar-user-dropdown-item">
+                                        <button className="navbar-user-dropdown-logout">
+                                            Logout
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     }
                 </div>
             </nav>
