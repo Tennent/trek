@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Modal from "react-modal";
 import "./Signup.css";
 
 export default function Signup({ isOpen, onClose, onSwitch }) {
+    const [userName, setUserName] = useState("");
+    const [userEmail, setUserEmail] = useState("");
+    const [userPassword, setUserPassword] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
