@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Signup from "../../pages/Signup/Signup";
 import Login from "../../pages/Login/Login";
 import './Navbar.css';
 
 export default function Navbar({ user, setUser }) {
+    const navigate = useNavigate();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalType, setModalType] = useState("signup");
@@ -18,6 +19,11 @@ export default function Navbar({ user, setUser }) {
 
     const switchToLogin = () => setModalType("login");
     const switchToSignup = () => setModalType("signup");
+
+    const handleLogout = () => {
+        setUser({ loggedIn: false });
+        navigate('/');
+    };
 
     return (
         <>
@@ -48,7 +54,7 @@ export default function Navbar({ user, setUser }) {
                                         </button>
                                     </div>
                                     <div className="navbar-user-dropdown-item">
-                                        <button className="navbar-user-dropdown-logout">
+                                        <button className="navbar-user-dropdown-logout" onClick={handleLogout}>
                                             Logout
                                         </button>
                                     </div>
