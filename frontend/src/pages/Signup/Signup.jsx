@@ -19,11 +19,11 @@ export default function Signup({ isOpen, onClose, onSwitch }) {
             <div className="signup-container">
                 <form className='signup-form' onSubmit={handleRegister}>
                     <label htmlFor="userName">Username:</label>
-                    <input id="userName" name="userName" type="text" />
+                    <input id="userName" name="userName" type="text" value={userName} onChange={(e) => setUserName(e.target.value)} />
                     <label htmlFor="userEmail">Email:</label>
-                    <input id="userEmail" name="userEmail" type="text" />
+                    <input id="userEmail" name="userEmail" type="text" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} />
                     <label htmlFor="userPassword">Password:</label>
-                    <input id="userPassword" name="userPassword" type="password" />
+                    <input id="userPassword" name="userPassword" type="password" value={userPassword} onChange={(e) => setUserPassword(e.target.value)} />
                     <div className='signup-btn-container'>
                         <button type="submit" className="signup-button">Sign Up</button>
                         <button onClick={onClose} className="close-button">Close</button>
