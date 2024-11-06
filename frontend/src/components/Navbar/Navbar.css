@@ -91,6 +91,18 @@
     background-color: #066A93;
     border-radius: 4px;
     box-shadow: 0 2px 4px #031D40;
+    animation: dropdownAppear 400ms ease-in-out;
+}
+
+@keyframes dropdownAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-3vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Tablet styles */
