@@ -52,18 +52,21 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: 1vw;
+    gap: 0.5rem;
     color: #031D40;
 }
 
-.legal-links p {
+.legal-links a {
     font-size: 2vh;
-    margin: 0;
+    font-weight: 400;
+    color: #031D40;
+
+    margin: 0.5rem;
     cursor: pointer;
     transition: transform 500ms ease;
 }
 
-.legal-links p:hover {
+.legal-links a:hover {
     color: #066A93;
 }
 
