@@ -17,9 +17,15 @@ export default function Footer({ user }) {
                 Register your car now!
             </h1>
             <div className='social-links'>
-                <img src="/icons/fb-icon.png" alt="fb-icon" />
-                <img src="/icons/insta-icon.png" alt="insta-icon" />
-                <img src="/icons/linkedin-icon.png" alt="linkedin-icon" />
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/icons/fb-icon.png" alt="fb-icon" />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/icons/insta-icon.png" alt="insta-icon" />
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/icons/linkedin-icon.png" alt="linkedin-icon" />
+                </a>
             </div>
             <div className="legal-links">
                 <p>Privacy policy</p>
