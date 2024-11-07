@@ -10,6 +10,7 @@ import Login from "../Login/Login";
 import Manage from "../Manage/Manage";
 import Track from "../Track/Track";
 import Save from "../Save/Save";
+import PrivacyPolicy from "../Legal/PrivacyPolicy";
 
 export default function App() {
   const [user, setUser] = useState({ loggedIn: false });
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="manage" element={<Manage />} />
           <Route path="track" element={<Track />} />
           <Route path="save" element={<Save />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </BrowserRouter>
