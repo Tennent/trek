@@ -29,7 +29,7 @@ export default function Footer({ user }) {
             </div>
             <div className="legal-links">
                 <Link to="privacy-policy">Privacy Policy</Link>
-                <p>Terms & conditions</p>
+                <Link to="terms-conditions">Terms & conditions</Link>
             </div>
         </nav>
     )
