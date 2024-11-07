@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Footer.css'
 
 export default function Footer({ user }) {
@@ -28,7 +28,7 @@ export default function Footer({ user }) {
                 </a>
             </div>
             <div className="legal-links">
-                <p>Privacy policy</p>
+                <Link to="privacy-policy">Privacy Policy</Link>
                 <p>Terms & conditions</p>
             </div>
         </nav>
