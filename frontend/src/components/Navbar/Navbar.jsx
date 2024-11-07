@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Signup from "../../pages/Signup/Signup";
 import Login from "../../pages/Login/Login";
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ user, setUser }) {
+    const navigate = useNavigate();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalType, setModalType] = useState("signup");
+    const [isDropdownHovered, setIsDropdownHovered] = useState(false);
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => {
@@ -17,6 +19,11 @@ export default function Navbar() {
 
     const switchToLogin = () => setModalType("login");
     const switchToSignup = () => setModalType("signup");
+
+    const handleLogout = () => {
+        setUser({ loggedIn: false });
+        navigate('/');
+    };
 
     return (
         <>
@@ -30,13 +37,37 @@ export default function Navbar() {
                     <Link to='/' className="navbar-button">Home</Link>
                     <Link to='about' className="navbar-button">About</Link>
                     <Link to='contact' className="navbar-button">Contact</Link>
-                    <button className="signup-button" onClick={openModal}>Sign Up</button>
+                    {!user.loggedIn
+                        ? <button className="signup-button" onClick={openModal}>Sign Up</button>
+                        : <div
+                            className="navbar-user-container"
+                            onMouseEnter={() => setIsDropdownHovered(true)}
+                            onMouseLeave={() => setIsDropdownHovered(false)}
+                        >
+                            <img className="user-icon" src="/icons/user-icon.png" alt="user-icon" />
+
+                            {isDropdownHovered && (
+                                <div className="navbar-user-dropdown-container">
+                                    <div className="navbar-user-dropdown-item">
+                                        <button className="navbar-user-dropdown-button">
+                                            Settings
+                                        </button>
+                                    </div>
+                                    <div className="navbar-user-dropdown-item">
+                                        <button className="navbar-user-dropdown-logout" onClick={handleLogout}>
+                                            Logout
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    }
                 </div>
             </nav>
 
             {modalType === "signup"
                 ? <Signup isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToLogin} />
-                : <Login isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToSignup} />
+                : <Login isOpen={isModalOpen} onClose={closeModal} onSwitch={switchToSignup} user={user} setUser={setUser} />
             }
         </>
     )
