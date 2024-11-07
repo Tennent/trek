@@ -1,9 +1,19 @@
+import { useNavigate } from 'react-router-dom';
 import './Footer.css'
 
-export default function Footer() {
+export default function Footer({ user }) {
+    const navigate = useNavigate();
+    const handleCallToAction = (e) => {
+        e.preventDefault();
+
+        !user.loggedIn
+            ? alert("Please log in or register first!")
+            : navigate("manage");
+    }
+
     return (
         <nav className='footer-container'>
-            <h1 className="call-to-action">
+            <h1 className="call-to-action" onClick={handleCallToAction}>
                 Register your car now!
             </h1>
             <div className='social-links'>
