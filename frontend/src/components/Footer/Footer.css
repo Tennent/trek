@@ -56,14 +56,17 @@
     color: #031D40;
 }
 
-.legal-links p {
+.legal-links a {
     font-size: 2vh;
-    margin: 0;
+    font-weight: 400;
+    color: #031D40;
+
+    margin: 1rem;
     cursor: pointer;
     transition: transform 500ms ease;
 }
 
-.legal-links p:hover {
+.legal-links a:hover {
     color: #066A93;
 }
 
