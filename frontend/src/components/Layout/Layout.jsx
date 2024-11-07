@@ -9,7 +9,7 @@ export default function Layout({ user, setUser }) {
       <main id='main'>
         <Navbar user={user} setUser={setUser} />
         <Outlet />
-        <Footer />
+        <Footer user={user} />
       </main>
     </>
   )
