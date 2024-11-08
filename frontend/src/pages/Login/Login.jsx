@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Modal from "react-modal";
 import loginUser from '../../services/loginUser';
-import getUserCarIds from '../../services/getUserCarIds';
+import fetchUserCarIds from '../../services/fetchUserCarIds';
 import "./Login.css";
 
 export default function Login({ isOpen, onClose, onSwitch, user, setUser, setUserCarIds }) {
@@ -15,7 +15,7 @@ export default function Login({ isOpen, onClose, onSwitch, user, setUser, setUse
             const userData = await loginUser(messageBody);
 
             if (!userData.error) {
-                const carIds = await getUserCarIds(userData._id);
+                const carIds = await fetchUserCarIds(userData._id);
 
                 setUser(userData);
                 setUserCarIds(carIds);
