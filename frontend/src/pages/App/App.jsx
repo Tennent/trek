@@ -16,6 +16,7 @@ import TermsAndConditions from "../Legal/TermsAndConditions";
 export default function App() {
   const [user, setUser] = useState({ loggedIn: false });
   const [userCarIds, setUserCarIds] = useState([]);
+  const [userCars, setUserCars] = useState([]);
 
   return (
     <BrowserRouter>
