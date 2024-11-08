@@ -52,6 +52,25 @@ body {
     box-shadow: 0 2px 4px #031D40;
 }
 
+.alert-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    width: 40vw;
+    height: 30vh;
+    
+    text-align: center;
+    background-color: #066A93;
+    box-shadow: 0 2px 4px #031D40;
+}
+
+.alert-card-image {
+    width: 8vw;
+    height: auto;
+    margin-right: -7vw;
+}
+
 .card-list-container {
     display: flex;
     align-items: flex-start;
@@ -137,6 +156,15 @@ body {
         width: 20vw;
         margin-right: -10vw;
     }
+
+    .alert-card-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .alert-card-image {
+        margin-right: 0;
+    }
     
     .card-list {
         font-size: 1.2vw;
@@ -171,6 +199,15 @@ body {
     .card-image {
         width: 25vw;
         margin-right: -12vw;
+    }
+
+    .alert-card-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .alert-card-image {
+        margin-right: 0;
     }
     
     .card-list {
@@ -214,6 +251,15 @@ body {
         grid-row: 1;
         margin-top: 5vh;
         width: 35vw;
+    }
+
+    .alert-card-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .alert-card-image {
+        margin-right: 0;
     }
     
     .card-list {
@@ -267,6 +313,15 @@ body {
 
     .card-image {
         width: 50vw;
+        margin-right: 0;
+    }
+
+    .alert-card-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .alert-card-image {
         margin-right: 0;
     }
     
