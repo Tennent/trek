@@ -1,20 +1,29 @@
+import { useState } from 'react'
 import Modal from "react-modal";
 
 export default function CarEdit({ carId, userCars, setUserCars, manageModalState, closeModal }) {
+    const [formData, setFormData] = useState({
+        year: '',
+        make: '',
+        model: '',
+        fuel_type: '',
+        body_type: ''
+    });
+
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="custom-modal" overlayClassName="custom-overlay">
             <div className="car-edit-container">
                 <form className='car-edit-form'>
                     <label htmlFor="car-year">Year:</label>
-                    <input id="car-year" name="car-year" type="number" />
+                    <input id="car-year" name="car-year" type="number" value={formData.year} />
                     <label htmlFor="car-make">Make:</label>
-                    <input id="car-make" name="car-make" type="text" />
+                    <input id="car-make" name="car-make" type="text" value={formData.make} />
                     <label htmlFor="car-model">Model:</label>
-                    <input id="car-model" name="car-model" type="text" />
+                    <input id="car-model" name="car-model" type="text" value={formData.model} />
                     <label htmlFor="car-fuel">Fuel Type:</label>
-                    <input id="car-fuel" name="car-fuel" type="text" />
+                    <input id="car-fuel" name="car-fuel" type="text" value={formData.fuel_type} />
                     <label htmlFor="car-body">Body Type:</label>
-                    <input id="car-body" name="car-body" type="text" />
+                    <input id="car-body" name="car-body" type="text" value={formData.body_type} />
 
                     <div className='save-btn-container'>
                         <button type="submit" className="save-button">Save</button>
