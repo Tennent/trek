@@ -19,7 +19,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout user={user} setUser={setUser} />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home user={user} />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="signup" element={<Signup />} />
