@@ -15,16 +15,19 @@ import TermsAndConditions from "../Legal/TermsAndConditions";
 
 export default function App() {
   const [user, setUser] = useState({ loggedIn: false });
+  const [userCarIds, setUserCarIds] = useState([]);
+  const [userCars, setUserCars] = useState([]);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout user={user} setUser={setUser} />}>
-          <Route index element={<Home />} />
+        <Route path="/" element={<Layout user={user} setUser={setUser} setUserCarIds={setUserCarIds} />}>
+          <Route index element={<Home user={user} />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
-          <Route path="manage" element={<Manage />} />
+          <Route path="manage" element={<Manage userCarIds={userCarIds} userCars={userCars} setUserCars={setUserCars} />} />
           <Route path="track" element={<Track />} />
           <Route path="save" element={<Save />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
