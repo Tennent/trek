@@ -15,10 +15,12 @@ import TermsAndConditions from "../Legal/TermsAndConditions";
 
 export default function App() {
   const [user, setUser] = useState({ loggedIn: false });
+  const [userCarIds, setUserCarIds] = useState([]);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout user={user} setUser={setUser} />}>
+        <Route path="/" element={<Layout user={user} setUser={setUser} setUserCarIds={setUserCarIds} />}>
           <Route index element={<Home user={user} />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
