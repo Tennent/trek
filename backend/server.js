@@ -140,6 +140,21 @@ app.delete("/api/v1/car/:_id", async (req, res) => {
     }
 });
 
+app.get("/api/v1/car/:_id", async (req, res) => {
+    try {
+        const { _id } = req.params
+        
+        const car = await CarModel.findById(_id);
+        if (!car) {
+            return res.status(404).json({ message: "Car not found" });
+        }
+
+        return res.status(200).json(car);
+    } catch (error) {
+        return res.status(500).json({ message: "Some error occured" })
+    }
+});
+
 app.post("/api/v1/createMaintenanceEntry", async (req, res) => {
     try {
         const { date, title, description, cost, items, carId } = req.body;
@@ -187,7 +202,7 @@ app.patch("/api/v1/updateMaintenanceEntry/:_id", async (req, res) => {
             for (const item of req.body.items) {
                 const { _id: itemId, ...fieldsToUpdate } = item;
                 const itemToUpdate = maintenanceEntry.items.id(itemId);
-                
+
                 if (itemToUpdate) {
                     Object.keys(fieldsToUpdate).forEach(field => {
                         if (fieldsToUpdate[field] !== undefined) {
