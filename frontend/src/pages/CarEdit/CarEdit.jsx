@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Modal from "react-modal";
+import "./CarEdit.css";
 
 export default function CarEdit({ carId, userCars, setUserCars, manageModalState, closeModal }) {
     const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ export default function CarEdit({ carId, userCars, setUserCars, manageModalState
     };
 
     return (
-        <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="custom-modal" overlayClassName="custom-overlay">
+        <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="edit-custom-modal" overlayClassName="edit-custom-overlay">
             <div className="car-edit-container">
                 <form className='car-edit-form'>
                     <label htmlFor="car-year">Year:</label>
@@ -58,8 +59,8 @@ export default function CarEdit({ carId, userCars, setUserCars, manageModalState
                     </div>
                 </form>
 
-                <div className="modal-logo-container">
-                    <img src="/trek-logo.png" alt="trek-logo" className="modal-logo" />
+                <div className="edit-modal-logo-container">
+                    <img src="/trek-logo.png" alt="trek-logo" className="edit-modal-logo" />
                 </div>
             </div>
         </Modal>
