@@ -27,6 +27,9 @@ export default function CarList({ userCars, setUserCars, manageModalState, openM
                             <img src="./icons/manage-delete-icon.png" alt="delete-icon" />
                         </div>
                     </div>
+                    {manageModalState.isOpen === true && (
+                        <CarEdit carId={car._id} userCars={userCars} setUserCars={setUserCars} manageModalState={manageModalState} closeModal={closeModal} />
+                    )}
                 </div>
             ))}
         </div>
