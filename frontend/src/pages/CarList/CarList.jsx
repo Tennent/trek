@@ -1,3 +1,4 @@
+import CarEdit from "../CarEdit/CarEdit";
 import "./CarList.css";
 
 export default function CarList({ userCars, setUserCars, manageModalState, openModal, closeModal }) {
@@ -19,7 +20,7 @@ export default function CarList({ userCars, setUserCars, manageModalState, openM
                         <div className="add-option">
                             <img src="./icons/manage-add-icon.png" alt="add-icon" />
                         </div>
-                        <div id="edit-car" className="edit-option">
+                        <div id="edit-car" className="edit-option" onClick={(e) => openModal(e.target.id, car._id)}>
                             <img src="./icons/manage-edit-icon.png" alt="edit-icon" />
                         </div>
                         <div className="delete-option">
