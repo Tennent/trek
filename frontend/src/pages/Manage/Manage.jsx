@@ -5,7 +5,28 @@ import "./Manage.css";
 
 export default function Manage({ userCarIds, userCars, setUserCars }) {
     const [isHovered, setIsHovered] = useState(false);
-    
+    const [manageModalState, setManageModalState] = useState({
+        isOpen: false,
+        type: "",
+        selectedCarId: ""
+    });
+
+    const openModal = (type, carId) => {
+        setManageModalState({
+            isOpen: true,
+            type,
+            selectedCarId: carId
+        });
+    };
+
+    const closeModal = () => {
+        setManageModalState({
+            isOpen: false,
+            type: "",
+            selectedCarId: ""
+        });
+    };
+
     useEffect(() => {
         async function collectUserCars() {
             try {
