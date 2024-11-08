@@ -1,4 +1,4 @@
-export default async function getUserCarIds(userId) {
+export default async function fetchUserCarIds(userId) {
     try {
         const res = await fetch(`/api/v1/user/${userId}`, {
             method: 'GET',
