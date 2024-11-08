@@ -1,22 +1,32 @@
 import { useState } from 'react'
 import Modal from "react-modal";
 import loginUser from '../../services/loginUser';
+import getUserCarIds from '../../services/getUserCarIds';
 import "./Login.css";
 
-export default function Login({ isOpen, onClose, onSwitch, user, setUser }) {
+export default function Login({ isOpen, onClose, onSwitch, user, setUser, setUserCarIds }) {
     const [userName, setUserName] = useState("");
     const [userPassword, setUserPassword] = useState("");
 
     async function handleLogin(e) {
-        e.preventDefault()
-        const messageBody = { user_name: userName, password: userPassword };
-        const data = await loginUser(messageBody);
+        e.preventDefault();
+        try {
+            const messageBody = { user_name: userName, password: userPassword };
+            const userData = await loginUser(messageBody);
 
-        if (!data.error) {
-            setUser(data);
-            onClose();
+            if (!userData.error) {
+                const carIds = await getUserCarIds(userData._id);
+
+                setUser(userData);
+                setUserCarIds(carIds);
+
+                onClose();
+            }
+        } catch (error) {
+            console.error("Login error:", error);
+            setUserCarIds([]);
         }
-    };
+    }
 
     return (
         <Modal isOpen={isOpen} onRequestClose={onClose} className="custom-modal" overlayClassName="custom-overlay">
