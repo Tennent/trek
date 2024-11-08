@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 
-export default function Home() {
+export default function Home({ user }) {
+
+    const loginRegisterAlert = () => {
+        return alert("Please log in or register first!");
+    };
 
     return (
         <div className="home-container">
@@ -11,9 +15,17 @@ export default function Home() {
 
             <div className="card-container">
                 <div className="manage-card">
-                    <Link to="manage">
-                        <img src="/icons/manage-icon.png" alt="manage-card" />
-                    </Link>
+                    {user.loggedIn ? (
+                        <Link to="manage">
+                            <img src="/icons/manage-icon.png" alt="manage-card" />
+                        </Link>
+                    ) : (
+                        <img
+                            src="/icons/manage-icon.png"
+                            alt="manage-card"
+                            onClick={loginRegisterAlert}
+                        />
+                    )}
                 </div>
                 <div className="track-card">
                     <Link to="track">
