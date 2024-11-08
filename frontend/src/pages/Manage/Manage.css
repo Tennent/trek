@@ -44,6 +44,13 @@ body {
     box-shadow: 0 2px 4px #031D40;
 }
 
+.manage-card-container-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .card-image {
     width: 15vw;
     height: auto;
