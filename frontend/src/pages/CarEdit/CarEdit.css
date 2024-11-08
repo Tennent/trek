@@ -59,3 +59,33 @@
     font-style: normal;
     color: #031D40;
 }
+
+.save-btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5vh;
+}
+
+.save-btn-container .save-button,
+.cancel-button {
+    font-size: 1vw;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: #066A93;
+    transition: transform 500ms ease;
+}
+
+.save-btn-container .save-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #08A771;
+    color: #FFFFFF;
+}
+
+.save-btn-container .cancel-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #bd1b1b;
+    color: #FFFFFF;
+}
