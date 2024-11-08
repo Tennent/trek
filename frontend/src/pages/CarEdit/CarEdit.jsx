@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Modal from "react-modal";
 
 export default function CarEdit({ carId, userCars, setUserCars, manageModalState, closeModal }) {
@@ -9,6 +9,25 @@ export default function CarEdit({ carId, userCars, setUserCars, manageModalState
         fuel_type: '',
         body_type: ''
     });
+
+    useEffect(() => {
+        async function findEditedCar() {
+            const car = userCars.find((car) => car._id === carId);
+
+            if (car) {
+                setFormData({
+                    year: car.year,
+                    make: car.make,
+                    model: car.model,
+                    fuel_type: car.fuel_type,
+                    body_type: car.body_type
+                });
+            } else {
+                console.error("Error finding editable car!")
+            }
+        }
+        findEditedCar();
+    }, [carId, userCars]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
