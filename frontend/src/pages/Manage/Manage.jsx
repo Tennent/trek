@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import fetchUserCar from "../../services/fetchUserCar";
 import "./Manage.css";
 
 function UserCarList({ cars }) {
@@ -33,8 +34,31 @@ function UserCarList({ cars }) {
     );
 };
 
-export default function Manage() {
+export default function Manage({ userCarIds, userCars, setUserCars }) {
     const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+        async function collectUserCars() {
+            try {
+                if (!Array.isArray(userCarIds) || userCarIds.length === 0) {
+                    console.log("User has no registered cars!");
+                    setUserCars([]);
+                    return;
+                }
+
+                const carDetailsPromises = userCarIds.map(id => fetchUserCar(id));
+                const cars = await Promise.all(carDetailsPromises);
+
+                const validCars = cars.filter(car => car !== null);
+                setUserCars(validCars);
+            } catch (error) {
+                console.error("Error collecting car details:", error);
+                setUserCars([]);
+            }
+        }
+
+        collectUserCars();
+    }, [userCarIds, setUserCars]);
 
     return (
         <div className='manage-container'>
