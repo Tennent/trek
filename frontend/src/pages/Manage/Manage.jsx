@@ -82,26 +82,20 @@ export default function Manage({ user, userCarIds, setUserCarIds, userCars, setU
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
-                        <img
-                            className="add-item"
-                            src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
-                            alt="add-item-icon"
-                        />
                     </div>
                 </>
                 :
-                <>
-                    <div className="alert-card-container">
-                        <img className="alert-card-image" src="./icons/alert-icon.png" alt="alert-icon" />
-                        <h2>You don't have any cars registered!</h2>
-                    </div>
-                    <img
-                        className="add-item"
-                        src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
-                        alt="add-item-icon"
-                    />
-                </>
+                <div className="alert-card-container">
+                    <img className="alert-card-image" src="./icons/alert-icon.png" alt="alert-icon" />
+                    <h2>You don't have any cars registered!</h2>
+                </div>
             }
+
+            <img
+                className="add-item"
+                src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
+                alt="add-item-icon"
+            />
         </div>
     )
 }
