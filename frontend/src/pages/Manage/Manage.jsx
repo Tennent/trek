@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import fetchUserCar from "../../services/fetchUserCar";
 import deleteCar from "../../services/deleteCar";
 import CarList from "../CarList/CarList";
+import CarCreate from "../CarCreate/CarCreate";
 import "./Manage.css";
 
 export default function Manage({ user, userCarIds, setUserCarIds, userCars, setUserCars }) {
@@ -95,7 +96,18 @@ export default function Manage({ user, userCarIds, setUserCarIds, userCars, setU
                 className="add-item"
                 src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
                 alt="add-item-icon"
+                onClick={openModal("create-car", "")}
             />
+
+            {manageModalState.isOpen && manageModalState.type === "create-car" && (
+                <CarCreate
+                    userId={user._id}
+                    userCarIds={userCarIds}
+                    setUserCarIds={setUserCarIds}
+                    manageModalState={manageModalState}
+                    closeModal={closeModal}
+                />
+            )}
         </div>
     )
 }
