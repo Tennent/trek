@@ -1,6 +1,6 @@
-export default async function updateCar(messageBody) {
+export default async function updateCar(carId, messageBody) {
     try {
-        const res = await fetch(`/api/v1/updateCar/${messageBody._id}`, {
+        const res = await fetch(`/api/v1/updateCar/${carId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
