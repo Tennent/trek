@@ -11,20 +11,28 @@ export default function CarCreate({ userId, userCarIds, setUserCarIds, manageMod
         body_type: ''
     });
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="create-custom-modal" overlayClassName="create-custom-overlay">
             <div className="car-create-container">
-                <form className='car-create-form'>
+                <form className='car-create-form' onSubmit={handleFormSubmit}>
                     <label htmlFor="year">Year:</label>
-                    <input id="year" name="year" type="number" value={formData.year} />
+                    <input id="year" name="year" type="number" value={formData.year} onChange={handleChange} />
                     <label htmlFor="make">Make:</label>
-                    <input id="make" name="make" type="text" value={formData.make} />
+                    <input id="make" name="make" type="text" value={formData.make} onChange={handleChange} />
                     <label htmlFor="model">Model:</label>
-                    <input id="model" name="model" type="text" value={formData.model} />
+                    <input id="model" name="model" type="text" value={formData.model} onChange={handleChange} />
                     <label htmlFor="fuel_type">Fuel Type:</label>
-                    <input id="fuel_type" name="fuel_type" type="text" value={formData.fuel_type} />
+                    <input id="fuel_type" name="fuel_type" type="text" value={formData.fuel_type} onChange={handleChange} />
                     <label htmlFor="body_type">Body Type:</label>
-                    <input id="body_type" name="body_type" type="text" value={formData.body_type} />
+                    <input id="body_type" name="body_type" type="text" value={formData.body_type} onChange={handleChange} />
 
                     <div className='create-btn-container'>
                         <button type="submit" className="create-button">Create</button>
