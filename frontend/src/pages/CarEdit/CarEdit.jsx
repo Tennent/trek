@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Modal from "react-modal";
+import updateCar from '../../services/updateCar';
 import "./CarEdit.css";
 
 export default function CarEdit({ carId, userCars, setUserCars, manageModalState, closeModal }) {
@@ -36,6 +37,34 @@ export default function CarEdit({ carId, userCars, setUserCars, manageModalState
             ...prev,
             [name]: value
         }));
+    };
+
+    const handleFormUpdate = async (e) => {
+        e.preventDefault();
+        
+        try {
+            const originalCar = userCars.find(car => car._id === carId);
+            if (!originalCar) {
+                throw new Error('Car not found');
+            }
+
+            await updateCar(originalCar._id, formData);
+    
+            const updatedCar = {
+                ...originalCar,      
+                ...formData,         
+                _id: originalCar._id 
+            };
+    
+            setUserCars(prevCars =>
+                prevCars.map(car =>
+                    car._id === originalCar._id ? updatedCar : car
+                )
+            );
+            closeModal();
+        } catch (error) {
+            console.error("Error updating car:", error);
+        }
     };
 
     return (
