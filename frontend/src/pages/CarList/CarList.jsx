@@ -27,7 +27,7 @@ export default function CarList({ userCars, setUserCars, handleDeleteCar, manage
                     </div>
                 </div>
             ))}
-            {manageModalState.isOpen && manageModalState.selectedCarId && (
+            {manageModalState.isOpen && manageModalState.type === "edit-car" && manageModalState.selectedCarId && (
                 <CarEdit
                     carId={manageModalState.selectedCarId}
                     userCars={userCars}
