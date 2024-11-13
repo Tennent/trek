@@ -4,7 +4,7 @@ import deleteCar from "../../services/deleteCar";
 import CarList from "../CarList/CarList";
 import "./Manage.css";
 
-export default function Manage({ userCarIds, setUserCarIds, userCars, setUserCars }) {
+export default function Manage({ user, userCarIds, setUserCarIds, userCars, setUserCars }) {
     const [isHovered, setIsHovered] = useState(false);
     const [manageModalState, setManageModalState] = useState({
         isOpen: false,
