@@ -35,10 +35,10 @@ export default function Manage({ userCarIds, setUserCarIds, userCars, setUserCar
         if (confirmDelete) {
             try {
                 await deleteCar(carId);
-                
+
                 const updatedCarIds = userCarIds.filter(id => id !== carId);
                 setUserCarIds(updatedCarIds);
-                
+
             } catch (error) {
                 console.error("Error deleting car:", error);
             }
@@ -90,10 +90,17 @@ export default function Manage({ userCarIds, setUserCarIds, userCars, setUserCar
                     </div>
                 </>
                 :
-                <div className="alert-card-container">
-                    <img className="alert-card-image" src="./icons/alert-icon.png" alt="alert-icon" />
-                    <h2>You don't have any cars registered!</h2>
-                </div>
+                <>
+                    <div className="alert-card-container">
+                        <img className="alert-card-image" src="./icons/alert-icon.png" alt="alert-icon" />
+                        <h2>You don't have any cars registered!</h2>
+                    </div>
+                    <img
+                        className="add-item"
+                        src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
+                        alt="add-item-icon"
+                    />
+                </>
             }
         </div>
     )
