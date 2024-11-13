@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "react-modal";
+import createCar from "../../services/createCar";
 import "./CarCreate.css";
 
 export default function CarCreate({ userId, userCarIds, setUserCarIds, manageModalState, closeModal }) {
@@ -18,6 +19,28 @@ export default function CarCreate({ userId, userCarIds, setUserCarIds, manageMod
             [name]: value
         }));
     };
+
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const carDetails = {
+                userId: userId,
+                ...formData
+            }
+
+            const createdCar = await createCar(carDetails);
+            const createdCarId = createdCar.car._id;
+
+            setUserCarIds([
+                ...userCarIds,
+                createdCarId
+            ]);
+            closeModal();
+        } catch (error) {
+            console.error("Error creating car:", error);
+        }
+    }
 
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="create-custom-modal" overlayClassName="create-custom-overlay">
