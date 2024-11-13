@@ -41,21 +41,21 @@ export default function CarEdit({ carId, userCars, setUserCars, manageModalState
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="edit-custom-modal" overlayClassName="edit-custom-overlay">
             <div className="car-edit-container">
-                <form className='car-edit-form'>
-                    <label htmlFor="car-year">Year:</label>
-                    <input id="car-year" name="car-year" type="number" value={formData.year} onChange={handleChange} />
-                    <label htmlFor="car-make">Make:</label>
-                    <input id="car-make" name="car-make" type="text" value={formData.make} onChange={handleChange} />
-                    <label htmlFor="car-model">Model:</label>
-                    <input id="car-model" name="car-model" type="text" value={formData.model} onChange={handleChange} />
-                    <label htmlFor="car-fuel">Fuel Type:</label>
-                    <input id="car-fuel" name="car-fuel" type="text" value={formData.fuel_type} onChange={handleChange} />
-                    <label htmlFor="car-body">Body Type:</label>
-                    <input id="car-body" name="car-body" type="text" value={formData.body_type} onChange={handleChange} />
+                <form className='car-edit-form' onSubmit={handleFormUpdate}>
+                    <label htmlFor="year">Year:</label>
+                    <input id="year" name="year" type="number" value={formData.year} onChange={handleChange} />
+                    <label htmlFor="make">Make:</label>
+                    <input id="make" name="make" type="text" value={formData.make} onChange={handleChange} />
+                    <label htmlFor="model">Model:</label>
+                    <input id="model" name="model" type="text" value={formData.model} onChange={handleChange} />
+                    <label htmlFor="fuel_type">Fuel Type:</label>
+                    <input id="fuel_type" name="fuel_type" type="text" value={formData.fuel_type} onChange={handleChange} />
+                    <label htmlFor="body_type">Body Type:</label>
+                    <input id="body_type" name="body_type" type="text" value={formData.body_type} onChange={handleChange} />
 
                     <div className='save-btn-container'>
                         <button type="submit" className="save-button">Save</button>
-                        <button onClick={closeModal} className="cancel-button">Cancel</button>
+                        <button type="button" onClick={closeModal} className="cancel-button">Cancel</button>
                     </div>
                 </form>
 
