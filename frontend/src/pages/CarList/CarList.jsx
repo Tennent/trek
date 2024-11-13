@@ -1,6 +1,6 @@
 import CarEdit from "../CarEdit/CarEdit";
 
-export default function CarList({ userCars, setUserCars, manageModalState, openModal, closeModal }) {
+export default function CarList({ userCars, setUserCars, handleDeleteCar, manageModalState, openModal, closeModal }) {
     return (
         <div className="manage-card-container-list">
             {userCars.map((car) => (
@@ -21,7 +21,7 @@ export default function CarList({ userCars, setUserCars, manageModalState, openM
                         <div id="edit-car" className="edit-option" onClick={() => openModal("edit-car", car._id)}>
                             <img src="./icons/manage-edit-icon.png" alt="edit-icon" />
                         </div>
-                        <div className="delete-option">
+                        <div className="delete-option" onClick={(e) => handleDeleteCar(e, car._id)}>
                             <img src="./icons/manage-delete-icon.png" alt="delete-icon" />
                         </div>
                     </div>
