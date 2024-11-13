@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import fetchUserCar from "../../services/fetchUserCar";
+import deleteCar from "../../services/deleteCar";
 import CarList from "../CarList/CarList";
 import "./Manage.css";
 
-export default function Manage({ userCarIds, userCars, setUserCars }) {
+export default function Manage({ userCarIds, setUserCarIds, userCars, setUserCars }) {
     const [isHovered, setIsHovered] = useState(false);
     const [manageModalState, setManageModalState] = useState({
         isOpen: false,
@@ -26,6 +27,23 @@ export default function Manage({ userCarIds, userCars, setUserCars }) {
             selectedCarId: ""
         });
     };
+
+    async function handleDeleteCar(e, carId) {
+        e.preventDefault();
+        const confirmDelete = window.confirm("Are you sure you want to delete this car?");
+
+        if (confirmDelete) {
+            try {
+                await deleteCar(carId);
+                
+                const updatedCarIds = userCarIds.filter(id => id !== carId);
+                setUserCarIds(updatedCarIds);
+                
+            } catch (error) {
+                console.error("Error deleting car:", error);
+            }
+        }
+    }
 
     useEffect(() => {
         async function collectUserCars() {
@@ -58,7 +76,7 @@ export default function Manage({ userCarIds, userCars, setUserCars }) {
 
             {userCars.length > 0
                 ? <>
-                    <CarList userCars={userCars} setUserCars={setUserCars} manageModalState={manageModalState} openModal={openModal} closeModal={closeModal} />
+                    <CarList userCars={userCars} setUserCars={setUserCars} handleDeleteCar={handleDeleteCar} manageModalState={manageModalState} openModal={openModal} closeModal={closeModal} />
                     <div
                         className="add-item-container"
                         onMouseEnter={() => setIsHovered(true)}
