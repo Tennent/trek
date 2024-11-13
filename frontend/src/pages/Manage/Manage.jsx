@@ -96,7 +96,7 @@ export default function Manage({ user, userCarIds, setUserCarIds, userCars, setU
                 className="add-item"
                 src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
                 alt="add-item-icon"
-                onClick={openModal("create-car", "")}
+                onClick={() => openModal("create-car")}
             />
 
             {manageModalState.isOpen && manageModalState.type === "create-car" && (
