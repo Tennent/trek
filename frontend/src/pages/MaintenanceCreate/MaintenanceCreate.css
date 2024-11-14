@@ -107,3 +107,42 @@
     gap: 0.5rem;
     grid-column: span 2;
 }
+
+.add-maintenance-entry-option {
+    grid-column: span 2;
+    justify-self: center;
+}
+
+.delete-maintenance-entry-option,
+.add-maintenance-entry-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+
+    background-color: #031D40;
+    box-shadow: 0 2px 4px #031D40;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.delete-maintenance-entry-option:hover {
+    transform: scale(1.08);
+    background-color: #BD1B1B;
+    transform-origin: 800ms;
+}
+
+.add-maintenance-entry-option:hover {
+    transform: scale(1.08);
+    background-color: #08A771;
+    transform-origin: 800ms;
+}
+
+.delete-maintenance-entry-option img,
+.add-maintenance-entry-option img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
