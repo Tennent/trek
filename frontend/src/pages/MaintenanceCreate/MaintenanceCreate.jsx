@@ -84,7 +84,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                     <button type="button" onClick={addItem}>Add Item</button>
 
                     <div className="total-cost-display">
-                        <p>Total Cost: </p>
+                        <p>Total Cost: {totalCost.toFixed(0)}</p>
                     </div>
 
                     <div className='maintenance-create-btn-container'>
