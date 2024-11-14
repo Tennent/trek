@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "react-modal";
+import createMaintenanceEntry from "../../services/createMaintenanceEntry";
 import "./MaintenanceCreate.css";
 
 export default function MaintenanceCreate({ manageModalState, closeModal }) {
@@ -47,10 +48,27 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
         setTotalCost(calculateTotalCost(updatedItems));
     };
 
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const entryDetails = {
+                carId: manageModalState.selectedCarId,
+                cost: totalCost,
+                ...formData
+            }
+
+            createMaintenanceEntry(entryDetails);
+            closeModal();
+        } catch (error) {
+            console.error("Error creating maintenance entry:", error);
+        }
+    };
+
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="maintenance-create-custom-modal" overlayClassName="maintenance-create-custom-overlay">
             <div className="maintenance-create-container">
-                <form className='maintenance-create-form'>
+                <form className='maintenance-create-form' onSubmit={handleFormSubmit}>
                     <label htmlFor="date">Date:</label>
                     <input id="date" name="date" type="date" required value={formData.date} onChange={handleChange} />
                     <label htmlFor="title">Title:</label>
