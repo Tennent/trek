@@ -155,7 +155,7 @@ app.get("/api/v1/car/:_id", async (req, res) => {
     }
 });
 
-app.post("/api/v1/createMaintenanceEntry", async (req, res) => {
+app.post("/api/v1/car/createMaintenanceEntry", async (req, res) => {
     try {
         const { date, title, description, cost, items, carId } = req.body;
         if (!mongoose.Types.ObjectId.isValid(carId)) {

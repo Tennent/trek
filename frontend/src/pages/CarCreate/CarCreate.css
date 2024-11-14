@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.create-custom-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #000000bf;
+}
+
+.create-custom-modal {
+    position: relative;
+    z-index: 1001;
+
+    width: 20vw;
+    height: auto;
+    padding: 2vw;
+    border-radius: 1vw;
+
+    outline: none;
+    background: #C5DBCE;
+    box-shadow: 0 1vw 2vw #0000001a;
+
+    font-family: "Saira Condensed", sans-serif;
+}
+
+.car-create-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-create-form input {
+    color: black;
+    background-color: #FFFFFF;
+    padding: 0.5vw 1vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 0.8vw;
+    margin-bottom: 1vh;
+}
+
+.car-create-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.car-create-form label {
+    font-size: 1vw;
+    font-weight: 500;
+    font-style: normal;
+    color: #031D40;
+}
+
+.create-btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5vh;
+}
+
+.create-btn-container .create-button,
+.cancel-button {
+    font-size: 1vw;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: #066A93;
+    transition: transform 500ms ease;
+}
+
+.create-btn-container .create-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #08A771;
+    color: #FFFFFF;
+}
+
+.create-btn-container .cancel-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #bd1b1b;
+    color: #FFFFFF;
+}
+
+.create-modal-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.create-modal-logo {
+    width: 12vw;
+    height: auto;
+}

@@ -1,41 +1,51 @@
 import { useState, useEffect } from "react";
 import fetchUserCar from "../../services/fetchUserCar";
+import deleteCar from "../../services/deleteCar";
+import CarList from "../CarList/CarList";
+import CarCreate from "../CarCreate/CarCreate";
+import MaintenanceCreate from "../MaintenanceCreate/MaintenanceCreate";
 import "./Manage.css";
 
-function UserCarList({ cars }) {
-    return (
-        <div className="manage-card-container-list">
-            {cars.map((car, index) => (
-                <div key={car._id || index} className="card-container">
-                    <img className="card-image" src="./dummy-user-car.png" alt="user-car-image" />
-                    <div className="card-list-container">
-                        <ul className="card-list">
-                            <li>NICKNAME:</li>
-                            <li>YEAR: {car.year}</li>
-                            <li>MAKE: {car.make}</li>
-                            <li>MODEL: {car.model}</li>
-                        </ul>
-                    </div>
-
-                    <div className="card-menu-container">
-                        <div className="add-option">
-                            <img src="./icons/manage-add-icon.png" alt="add-icon" />
-                        </div>
-                        <div className="edit-option">
-                            <img src="./icons/manage-edit-icon.png" alt="edit-icon" />
-                        </div>
-                        <div className="delete-option">
-                            <img src="./icons/manage-delete-icon.png" alt="delete-icon" />
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
-};
-
-export default function Manage({ userCarIds, userCars, setUserCars }) {
+export default function Manage({ user, userCarIds, setUserCarIds, userCars, setUserCars }) {
     const [isHovered, setIsHovered] = useState(false);
+    const [manageModalState, setManageModalState] = useState({
+        isOpen: false,
+        type: "",
+        selectedCarId: ""
+    });
+
+    const openModal = (type, carId) => {
+        setManageModalState({
+            isOpen: true,
+            type,
+            selectedCarId: carId
+        });
+    };
+
+    const closeModal = () => {
+        setManageModalState({
+            isOpen: false,
+            type: "",
+            selectedCarId: ""
+        });
+    };
+
+    async function handleDeleteCar(e, carId) {
+        e.preventDefault();
+        const confirmDelete = window.confirm("Are you sure you want to delete this car?");
+
+        if (confirmDelete) {
+            try {
+                await deleteCar(carId);
+
+                const updatedCarIds = userCarIds.filter(id => id !== carId);
+                setUserCarIds(updatedCarIds);
+
+            } catch (error) {
+                console.error("Error deleting car:", error);
+            }
+        }
+    }
 
     useEffect(() => {
         async function collectUserCars() {
@@ -68,17 +78,12 @@ export default function Manage({ userCarIds, userCars, setUserCars }) {
 
             {userCars.length > 0
                 ? <>
-                    <UserCarList cars={userCars} />
+                    <CarList userCars={userCars} setUserCars={setUserCars} handleDeleteCar={handleDeleteCar} manageModalState={manageModalState} openModal={openModal} closeModal={closeModal} />
                     <div
                         className="add-item-container"
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
-                        <img
-                            className="add-item"
-                            src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
-                            alt="add-item-icon"
-                        />
                     </div>
                 </>
                 :
@@ -87,6 +92,30 @@ export default function Manage({ userCarIds, userCars, setUserCars }) {
                     <h2>You don't have any cars registered!</h2>
                 </div>
             }
+
+            <img
+                className="add-item"
+                src={isHovered ? './icons/manage-add-item-icon-hover.png' : './icons/manage-add-item-icon.png'}
+                alt="add-item-icon"
+                onClick={() => openModal("create-car")}
+            />
+
+            {manageModalState.isOpen && manageModalState.type === "create-car" && (
+                <CarCreate
+                    userId={user._id}
+                    userCarIds={userCarIds}
+                    setUserCarIds={setUserCarIds}
+                    manageModalState={manageModalState}
+                    closeModal={closeModal}
+                />
+            )}
+
+            {manageModalState.isOpen && manageModalState.type === "create-maintenance-entry" && (
+                <MaintenanceCreate
+                    manageModalState={manageModalState}
+                    closeModal={closeModal}
+                />
+            )}
         </div>
     )
 }
