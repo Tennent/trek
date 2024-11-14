@@ -29,6 +29,12 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
         setTotalCost(calculateTotalCost(updatedItems));
     };
 
+    const calculateTotalCost = (items) => {
+        return items.reduce((total, item) =>
+            total + (item.quantity * item.unit_price || 0), 0
+        );
+    };
+
     const addItem = () => {
         const updatedItems = [...formData.items, { name: '', quantity: 0, unit_price: 0 }];
         setFormData({ ...formData, items: updatedItems });
