@@ -3,6 +3,7 @@ import fetchUserCar from "../../services/fetchUserCar";
 import deleteCar from "../../services/deleteCar";
 import CarList from "../CarList/CarList";
 import CarCreate from "../CarCreate/CarCreate";
+import MaintenanceCreate from "../MaintenanceCreate/MaintenanceCreate";
 import "./Manage.css";
 
 export default function Manage({ user, userCarIds, setUserCarIds, userCars, setUserCars }) {
@@ -104,6 +105,13 @@ export default function Manage({ user, userCarIds, setUserCarIds, userCars, setU
                     userId={user._id}
                     userCarIds={userCarIds}
                     setUserCarIds={setUserCarIds}
+                    manageModalState={manageModalState}
+                    closeModal={closeModal}
+                />
+            )}
+
+            {manageModalState.isOpen && manageModalState.type === "create-maintenance-entry" && (
+                <MaintenanceCreate
                     manageModalState={manageModalState}
                     closeModal={closeModal}
                 />
