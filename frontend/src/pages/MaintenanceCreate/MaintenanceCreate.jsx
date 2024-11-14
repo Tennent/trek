@@ -8,7 +8,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
         date: '',
         title: '',
         description: '',
-        items: [{ name: '', quantity: 0, unit_price: 0 }]
+        items: [{ name: '', quantity: '', unit_price: '' }]
     });
     const [totalCost, setTotalCost] = useState(0);
 
@@ -37,7 +37,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
     };
 
     const addItem = () => {
-        const updatedItems = [...formData.items, { name: '', quantity: 0, unit_price: 0 }];
+        const updatedItems = [...formData.items, { name: '', quantity: '', unit_price: '' }];
         setFormData({ ...formData, items: updatedItems });
         setTotalCost(calculateTotalCost(updatedItems));
     };
