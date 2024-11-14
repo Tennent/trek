@@ -81,7 +81,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Item Name"
+                                placeholder="Name"
                                 value={item.name}
                                 onChange={(e) => handleItemChange(index, e)}
                                 required
