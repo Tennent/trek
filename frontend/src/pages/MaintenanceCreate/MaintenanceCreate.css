@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.maintenance-create-custom-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #000000bf;
+}
+
+.maintenance-create-custom-modal {
+    position: relative;
+    z-index: 1001;
+
+    width: 50rem;
+    height: auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+
+    outline: none;
+    background: #C5DBCE;
+    box-shadow: 0 1vw 2vw #0000001a;
+
+    font-family: "Saira Condensed", sans-serif;
+}
