@@ -96,3 +96,14 @@
 .maintenance-create-form textarea {
     max-width: 100%;
 }
+
+.maintenance-create-form label[for="items"] {
+    grid-column: span 2;
+}
+
+.item-input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 0.5rem;
+    grid-column: span 2;
+}
