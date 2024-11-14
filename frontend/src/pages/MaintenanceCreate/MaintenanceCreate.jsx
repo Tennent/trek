@@ -58,7 +58,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                 ...formData
             }
 
-            createMaintenanceEntry(entryDetails);
+            await createMaintenanceEntry(entryDetails);
             closeModal();
         } catch (error) {
             console.error("Error creating maintenance entry:", error);
