@@ -30,3 +30,14 @@
 
     font-family: "Saira Condensed", sans-serif;
 }
+
+.maintenance-create-container {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.maintenance-create-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
