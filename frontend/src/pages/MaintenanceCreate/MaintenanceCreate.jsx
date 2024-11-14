@@ -19,6 +19,16 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
         }));
     };
 
+    const handleItemChange = (index, event) => {
+        const { name, value } = event.target;
+        const updatedItems = formData.items.map((item, i) =>
+            i === index ? { ...item, [name]: value } : item
+        );
+
+        setFormData({ ...formData, items: updatedItems });
+        setTotalCost(calculateTotalCost(updatedItems));
+    };
+
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="maintenance-create-custom-modal" overlayClassName="maintenance-create-custom-overlay">
             <div className="maintenance-create-container">
@@ -37,6 +47,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                                 name="name"
                                 placeholder="Item Name"
                                 value={item.name}
+                                onChange={(e) => handleItemChange(index, e)}
                                 required
                             />
                             <input
@@ -44,6 +55,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                                 name="quantity"
                                 placeholder="Quantity"
                                 value={item.quantity}
+                                onChange={(e) => handleItemChange(index, e)}
                                 required
                             />
                             <input
@@ -51,6 +63,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                                 name="unit_price"
                                 placeholder="Unit Price"
                                 value={item.unit_price}
+                                onChange={(e) => handleItemChange(index, e)}
                                 required
                             />
                             <button type="button">Remove</button>
