@@ -29,6 +29,18 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
         setTotalCost(calculateTotalCost(updatedItems));
     };
 
+    const addItem = () => {
+        const updatedItems = [...formData.items, { name: '', quantity: 0, unit_price: 0 }];
+        setFormData({ ...formData, items: updatedItems });
+        setTotalCost(calculateTotalCost(updatedItems));
+    };
+
+    const removeItem = (index) => {
+        const updatedItems = formData.items.filter((_, i) => i !== index);
+        setFormData({ ...formData, items: updatedItems });
+        setTotalCost(calculateTotalCost(updatedItems));
+    };
+
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="maintenance-create-custom-modal" overlayClassName="maintenance-create-custom-overlay">
             <div className="maintenance-create-container">
@@ -66,10 +78,10 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                                 onChange={(e) => handleItemChange(index, e)}
                                 required
                             />
-                            <button type="button">Remove</button>
+                            <button type="button" onClick={() => removeItem(index)}>Remove</button>
                         </div>
                     ))}
-                    <button type="button">Add Item</button>
+                    <button type="button" onClick={addItem}>Add Item</button>
 
                     <div className="total-cost-display">
                         <p>Total Cost: </p>
