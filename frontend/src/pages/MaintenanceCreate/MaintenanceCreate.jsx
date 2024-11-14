@@ -102,10 +102,14 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                                 onChange={(e) => handleItemChange(index, e)}
                                 required
                             />
-                            <button type="button" onClick={() => removeItem(index)}>Remove</button>
+                            <div className="delete-maintenance-entry-option" onClick={() => removeItem(index)}>
+                                <img src="./icons/manage-delete-icon.png" alt="delete-icon" />
+                            </div>
                         </div>
                     ))}
-                    <button type="button" onClick={addItem}>Add Item</button>
+                    <div className="add-maintenance-entry-option" onClick={addItem}>
+                        <img src="./icons/manage-add-icon.png" alt="add-icon" />
+                    </div>
 
                     <div className="total-cost-display">
                         <p>Total Cost: {totalCost.toFixed(0)}</p>
@@ -116,10 +120,6 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                         <button type="button" onClick={closeModal} className="cancel-button">Cancel</button>
                     </div>
                 </form>
-
-                <div className="maintenance-create-modal-logo-container">
-                    <img src="/trek-logo.png" alt="trek-logo" className="maintenance-create-modal-logo" />
-                </div>
             </div>
         </Modal>
     )
