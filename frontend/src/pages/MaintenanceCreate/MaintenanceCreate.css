@@ -48,3 +48,22 @@
     font-style: normal;
     color: #031D40;
 }
+
+.maintenance-create-form input, textarea {
+    width: 100%;
+    padding: 0.5vw 1vw;
+    margin-bottom: 0.8rem;
+    
+    
+    color: black;
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.maintenance-create-form input:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
