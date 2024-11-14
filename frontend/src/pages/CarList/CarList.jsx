@@ -15,7 +15,7 @@ export default function CarList({ userCars, setUserCars, handleDeleteCar, manage
                         </ul>
                     </div>
                     <div className="card-menu-container">
-                        <div className="add-option">
+                        <div className="add-option" onClick={() => openModal("create-maintenance-entry", car._id)}>
                             <img src="./icons/manage-add-icon.png" alt="add-icon" />
                         </div>
                         <div id="edit-car" className="edit-option" onClick={() => openModal("edit-car", car._id)}>
