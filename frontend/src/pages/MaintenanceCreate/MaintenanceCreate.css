@@ -157,3 +157,34 @@
     font-style: normal;
     color: #031D40;
 }
+
+.maintenance-create-btn-container {
+    grid-column: span 2;
+    display: flex;
+    justify-content: baseline;
+    gap: 0.5rem;
+}
+
+.maintenance-create-btn-container .create-button,
+.cancel-button {
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+
+    background-color: #066A93;
+    transition: transform 500ms ease;
+}
+
+.maintenance-create-btn-container .create-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #08A771;
+    color: #FFFFFF;
+}
+
+.maintenance-create-btn-container .cancel-button:hover {
+    transform: scale(1.05);
+    transform-origin: 500ms;
+    background-color: #BD1B1B;
+    color: #FFFFFF;
+}
