@@ -11,16 +11,24 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
     });
     const [totalCost, setTotalCost] = useState(0);
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="maintenance-create-custom-modal" overlayClassName="maintenance-create-custom-overlay">
             <div className="maintenance-create-container">
                 <form className='maintenance-create-form'>
                     <label htmlFor="date">Date:</label>
-                    <input id="date" name="date" type="date" required value={formData.date} />
+                    <input id="date" name="date" type="date" required value={formData.date} onChange={handleChange} />
                     <label htmlFor="title">Title:</label>
-                    <input id="title" name="title" type="text" required value={formData.title} />
+                    <input id="title" name="title" type="text" required value={formData.title} onChange={handleChange} />
                     <label htmlFor="description">Description:</label>
-                    <input id="description" name="description" type="text" value={formData.description} />
+                    <input id="description" name="description" type="text" value={formData.description} onChange={handleChange} />
                     <label htmlFor="items">Items:</label>
                     {formData.items.map((item, index) => (
                         <div key={index} className="item-input-group">
