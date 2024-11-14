@@ -1,7 +1,15 @@
+import { useState } from "react";
 import Modal from "react-modal";
 import "./MaintenanceCreate.css";
 
 export default function MaintenanceCreate({ manageModalState, closeModal }) {
+    const [formData, setFormData] = useState({
+        date: '',
+        title: '',
+        description: '',
+        items: [{ name: '', quantity: 0, unit_price: 0 }]
+    });
+    const [totalCost, setTotalCost] = useState(0);
 
     return (
         <Modal isOpen={manageModalState.isOpen} onRequestClose={closeModal} className="maintenance-create-custom-modal" overlayClassName="maintenance-create-custom-overlay">
