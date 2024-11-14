@@ -74,7 +74,7 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
                     <label htmlFor="title">Title:</label>
                     <input id="title" name="title" type="text" required value={formData.title} onChange={handleChange} />
                     <label htmlFor="description">Description:</label>
-                    <input id="description" name="description" type="text" value={formData.description} onChange={handleChange} />
+                    <textarea id="description" name="description" type="text" value={formData.description} onChange={handleChange} />
                     <label htmlFor="items">Items:</label>
                     {formData.items.map((item, index) => (
                         <div key={index} className="item-input-group">
