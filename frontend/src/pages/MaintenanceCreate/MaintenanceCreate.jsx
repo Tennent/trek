@@ -16,12 +16,39 @@ export default function MaintenanceCreate({ manageModalState, closeModal }) {
             <div className="maintenance-create-container">
                 <form className='maintenance-create-form'>
                     <label htmlFor="date">Date:</label>
-                    <input id="date" name="date" type="date" required />
+                    <input id="date" name="date" type="date" required value={formData.date} />
                     <label htmlFor="title">Title:</label>
-                    <input id="title" name="title" type="text" required />
+                    <input id="title" name="title" type="text" required value={formData.title} />
                     <label htmlFor="description">Description:</label>
-                    <input id="description" name="description" type="text" />
+                    <input id="description" name="description" type="text" value={formData.description} />
                     <label htmlFor="items">Items:</label>
+                    {formData.items.map((item, index) => (
+                        <div key={index} className="item-input-group">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Item Name"
+                                value={item.name}
+                                required
+                            />
+                            <input
+                                type="number"
+                                name="quantity"
+                                placeholder="Quantity"
+                                value={item.quantity}
+                                required
+                            />
+                            <input
+                                type="number"
+                                name="unit_price"
+                                placeholder="Unit Price"
+                                value={item.unit_price}
+                                required
+                            />
+                            <button type="button">Remove</button>
+                        </div>
+                    ))}
+                    <button type="button">Add Item</button>
 
                     <div className="total-cost-display">
                         <p>Total Cost: </p>
